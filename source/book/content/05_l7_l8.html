@@ -1,0 +1,246 @@
+<section class="opener" id="l7">
+  <div class="band">
+    <!--SPRIG:7-->
+    <div class="lbl">Lesson</div>
+    <div class="num">07</div>
+    <h1 data-short="Lesson 7 &#183; Space and Motion">Space and Motion</h1>
+    <p class="dek">Put your pluck in a room, give it echoes, and let the arpeggiator play patterns from the notes you hold.</p>
+  </div>
+  <div class="stripes3"><div class="s1"></div><div class="s2"></div><div class="s3"></div></div>
+  <div class="meta"><div><b>Time</b>About 40 minutes</div><div><b>Starts from</b>Your [[~SOFT PLUCK]] (slot 103)</div><div><b>Outcome</b>[[~ECHO STEPS]], a spacious, moving pattern, in slot 107</div></div>
+
+  <h2><span class="tag">The Idea</span>Space, and patterns that play themselves</h2>
+  <p>Clap in a small bathroom, then in a cathedral, then in an open field. Same clap, three different sounds, because the space answers back. <strong>Effects</strong> let you choose the space a sound lives in, along with a lot of other characters. Two matter most for atmospheric music:</p>
+  <!--FIG:delay_reverb|A delay repeats the sound as distinct echoes. A reverb blurs countless tiny echoes into a smooth tail.-->
+  <ul class="plain">
+    <li><strong>Delay</strong> plays the sound back again after a short time, then again, each repeat quieter. <strong>FEEDBACK</strong> sets how many repeats; <strong>TIME</strong> sets the gap, and with BPM on it locks to the tempo so the echoes fall in rhythm. <strong>PING-PONG</strong> bounces them between left and right.</li>
+    <li><strong>Reverb</strong> imitates a room. <strong>SIZE</strong> and <strong>DECAY</strong> make it bigger and longer; <strong>MIX</strong> sets how much of it you hear.</li>
+  </ul>
+  <p>Shrub's effects sit in an <strong>FX RACK</strong> of up to seven slots, and the sound passes through them in order, top to bottom. An INIT slot's rack already holds DISTORTION, CHORUS, DELAY, COMPRESSOR and REVERB, all switched off, waiting. Your SOFT PLUCK started from an INIT slot, so its rack looks the same.</p>
+
+  <h3>The arpeggiator</h3>
+  <p>An <strong>arpeggio</strong> is a chord played one note at a time. An <strong>arpeggiator</strong> (arp) does this for you: hold a chord and it plays the notes in a pattern, in time with the tempo. Hold different notes and the pattern follows. The arp plays whenever it's switched on and you hold notes; it doesn't need the [[PLAY]] button.</p>
+  <!--FIG:arp|Hold three notes and the arp plays them in order, then again an octave up.-->
+
+  <h2><span class="tag">Meet the Controls</span>Effects and arp</h2>
+  <!--PANEL:l7|Tonight's buttons: FX, ARP and GLO.-->
+  <dl class="controls">
+    <div><dt>[[FX]]</dt><dd>Opens the FX RACK. Press again to step through each effect in the rack.</dd></div>
+    <div><dt>[[GLO]]</dt><dd>Press until [[~GLOBAL]]: [[@KNOB 1]] is TEMPO.</dd></div>
+    <div><dt>[[ARP]]</dt><dd>Opens the arp. Press again to switch it on or off.</dd></div>
+    <div><dt>[[PLAY]]</dt><dd>Starts and stops the <strong>transport</strong>, Shrub's clock for recorded movement and the metronome. Not needed tonight.</dd></div>
+  </dl>
+  <!--SCR:rack_delay|The FX RACK with the delay switched on. KNOB 1 picks a slot; KNOB 4 (MODE) switches it on by choosing a mode.-->
+  <p><strong>Switching an effect on.</strong> On the FX RACK page, [[@KNOB 1]] (SLOT) highlights a slot and [[@KNOB 4]] (MODE) turns it on by choosing a mode: for the delay, [[~OFF]], [[~NORMAL]], [[~PING-PONG]] or [[~TAP]]; for the reverb, [[~OFF]], [[~PLATE]] or [[~HALL]]. The rack list shows [[~ON]] or [[~OFF]] beside each.</p>
+  <p class="smallprint">The Operation Guide's knob table calls KNOB 4 &#8220;ON&#8221;, but the FM-1's screen, and the guide's own screenshot, label it MODE. Follow the screen.</p>
+  <p><strong>Adjusting an effect.</strong> Press [[FX]] again to step from one effect's page to the next, in rack order. A row of chips across the top shows which effects are on.</p>
+  <div class="clear"></div>
+  <table class="ref tight">
+    <tr><th>Page</th><th>KNOB 1</th><th>KNOB 2</th><th>KNOB 3</th><th>KNOB 4</th></tr>
+    <tr><td>DELAY 1</td><td>TIME L</td><td>TIME R</td><td>FEEDBACK</td><td>MIX</td></tr>
+    <tr><td>REVERB 1</td><td>SIZE</td><td>DECAY</td><td>WIDTH</td><td>MIX</td></tr>
+    <tr><td>ARP 1</td><td>RATE</td><td>GATE</td><td>OCTAVES</td><td>CHANCE</td></tr>
+    <tr><td>ARP 2</td><td>OFFSET</td><td>REPEATS</td><td>RETRIG</td><td>LATCH</td></tr>
+  </table>
+
+  <h2><span class="tag">Let's Make Something</span>Echo steps</h2>
+  <h3><span class="part">A</span>Load the pluck and set a tempo</h3>
+  <ol class="steps">
+    <li>Turn [[@PRESETS]] to <strong>103 SOFT PLUCK</strong> (it shows as [[~U103]]).</li>
+    <li>Press [[GLO]] until [[~GLOBAL]] is lit, page 1. Turn [[@KNOB 1]] (TEMPO) to [[~90 BPM]]: an unhurried pace. The echoes and the arp will both follow it.</li>
+  </ol>
+
+  <h3><span class="part">B</span>Echoes</h3>
+  <ol class="steps" start="3">
+    <li>Press [[FX]] until the title reads [[~FX RACK]].</li>
+    <li>Turn [[@KNOB 1]] (SLOT) to <strong>3</strong>, [[~DELAY]]. Turn [[@KNOB 4]] (MODE) clockwise until it reads [[~PING-PONG]] (it comes just after [[~NORMAL]]). The list shows [[~ON]].</li>
+    <li>Play single short notes and leave gaps. The echoes bounce from side to side, in time with the tempo.</li>
+    <li>Press [[FX]] until the title reads [[~DELAY]]. Its times start at [[~1/4]] (one beat). Turn [[@KNOB 2]] (TIME R) anticlockwise to [[~1/8]], so the right-hand echoes come twice as fast as the left. Rhythms tumble.</li>
+    <li>Set [[@KNOB 3]] (FEEDBACK) to <span class="target">about 35%</span> and [[@KNOB 4]] (MIX) to <span class="target">about 25%</span>. The echoes should sit behind the notes, not compete with them.</li>
+  </ol>
+
+  <h3><span class="part">C</span>A room</h3>
+  <ol class="steps" start="8">
+    <li>Press [[FX]] until [[~FX RACK]] is lit again. Turn SLOT to <strong>5</strong>, [[~REVERB]], and turn MODE to [[~HALL]].</li>
+    <li>Press [[FX]] until the title reads [[~REVERB]]. Set SIZE to <span class="target">about 60%</span>, DECAY to <span class="target">about 55%</span> and MIX to <span class="target">about 25%</span>.</li>
+  </ol>
+  <div class="oops"><b class="h">Too washy?</b>Delay and reverb pile up quickly. If notes blur into a fog, lower the two MIX knobs before anything else.</div>
+
+  <h3><span class="part">D</span>Switch on the arp</h3>
+  <ol class="steps" start="10">
+    <li>Press [[ARP]] to open it, then press [[ARP]] again to switch it on. The ARP button's light shows it's on, and the screen invites you to [[~HOLD NOTES TO ARPEGGIATE]].</li>
+    <li>Hold three white keys a little apart, such as A, C and E. The arp plays them one at a time, a sixteenth note each. Change the keys you hold and the pattern follows.</li>
+    <li>Turn [[@ALGORITHM]] to choose the pattern: try [[~UP/DOWN]]. Set [[@KNOB 3]] (OCTAVES) to [[~2]] and [[@KNOB 2]] (GATE) to <span class="target">about 60%</span>, so each step is a short, separated pluck that leaves room for the echoes.</li>
+    <li>Turn [[@SELECT]] to page 2 and set [[@KNOB 4]] (LATCH) to [[~ON]]. Now the arp keeps going after you let go, and a new chord replaces the old one. Sit back and listen to your pattern in its room.</li>
+  </ol>
+
+  <h3><span class="part">E</span>Save into a new slot, arp and all</h3>
+  <p>Save while the pattern is still playing: the arp being on, its pattern, octaves, gate and latch, the tempo and the effects all go into the preset together. You started from one of your own sounds, so Shrub will offer to save over it. You want a new copy instead.</p>
+  <ol class="steps" start="14">
+    <li>Press [[SAVE]]. The page offers [[~SAVE TO 103]].</li>
+    <li>Turn [[@KNOB 1]] (SLOT) to <strong>107</strong>. The top right should read [[~REPLACES INIT]]: an empty slot, nothing lost. (If it names a sound of yours, keep turning to a slot that says INIT.)</li>
+    <li>Spell [[~ECHO STEPS]], set CATEGORY to [[~SEQ]], and press [[SAVE]] again.</li>
+  </ol>
+
+  <h3><span class="part">F</span>Stop, and bring it back</h3>
+  <ol class="steps" start="17">
+    <li>To stop the latched pattern, turn [[@PRESETS]] to another sound. The arp belongs to ECHO STEPS, so it stops when another preset loads. ([[PLAY]] won't stop it: the arp doesn't run on the transport.)</li>
+    <li>Turn back to <strong>107</strong> and hold three keys. The arp springs back exactly as you saved it. On HOME, the [[~ARP]] chip at the top right is lit: a quick sign that a preset has its arp switched on.</li>
+  </ol>
+  <p>Your original [[~SOFT PLUCK]] is still waiting, untouched, in slot 103.</p>
+  <div class="why"><b class="h">What saves, and what ARP+SCALE does</b>The tempo, the arp and the scale (see Have a Play) are always saved with a preset. A separate setting of the FM-1 itself, <strong>ARP+SCALE</strong> on the GLOBAL page, decides what happens when you <em>change</em> presets. On [[~PRESET]], as it starts, each preset brings its own arp, key, scale and chord. On [[~GLOBAL]], whatever arp and scale you're using carry on as you browse other sounds. Leave it on PRESET for this book.</div>
+
+  <div class="play">
+    <h2><span class="tag">Have a Play</span>Scales and motion</h2>
+    <ul>
+      <li><strong>Lock to a scale.</strong> Press [[SCL]]. Turn [[@KNOB 1]] (KEY) to [[~A]] and [[@KNOB 2]] (SCALE) to [[~Minor]]. The keys light up to show the notes of A minor, and any key you press, black or white, is nudged to the nearest one. That doesn't make every combination pretty, but it keeps you inside one family of notes, which is a lovely way to explore. Set KEY to [[~--]] to switch it off.</li>
+      <li>In SCL, [[@KNOB 3]] (CHORD) turns each key into a whole chord. Combine it with the arp.</li>
+      <li>Try other arp patterns: [[~CONVERGE]], [[~RANDOM]], [[~PINKY UP]]. On page 1, [[@KNOB 4]] (CHANCE) makes some steps skip.</li>
+      <li><strong>Record a knob move.</strong> With the arp latched, press [[REC]] (it starts the transport), go to HOME and turn CUTOFF slowly down and up over a few seconds, then stop turning and press [[REC]] again. Shrub's <strong>motion sequencer</strong> loops your movement in a <strong>lane</strong>, and the [[SEQ]] light comes on. To remove it, press [[SEQ]], turn [[@SELECT]] to the lane holding your movement, turn [[@KNOB 1]] (POINT) to [[~CLEAR LANE]] and press [[SEQ]]. ([[~CLEAR ALL]] also works, but it wipes <em>every</em> lane in the sound you're working on, and asks you to press [[SEQ]] again to confirm.) Loading a preset without lanes doesn't clear them, so do this before moving on.</li>
+    </ul>
+  </div>
+
+  <div class="wrap"><div class="cols">
+    <div class="learned"><h2>What You've Learned</h2><ul>
+      <li>Delay makes echoes; reverb makes a room.</li>
+      <li>FX RACK: SLOT picks, MODE switches on; [[FX]] steps through pages.</li>
+      <li>The arp plays held notes as patterns, without the transport.</li>
+      <li>Arp, tempo and effects save with the preset.</li>
+      <li>Saving to a different SLOT makes a new copy.</li>
+    </ul></div>
+    <div class="creation"><h2><span class="tag">Your Creation</span>ECHO STEPS</h2>
+      <p>SOFT PLUCK at 90 BPM, arpeggiated up and down two octaves with latch, ping-pong echoes and a hall. Category SEQ.</p>
+      <p><span class="slot">Slot 107</span>. Load it, hold three keys, and it plays.</p></div>
+  </div></div>
+</section>
+
+<section class="opener" id="l8">
+  <div class="band">
+    <!--SPRIG:8-->
+    <div class="lbl">Lesson</div>
+    <div class="num">08</div>
+    <h1 data-short="Lesson 8 &#183; Your First Sound Bank">Your First Sound Bank</h1>
+    <p class="dek">Three more sounds from your own recipes, a tidy bank of ten, and a first recording into the MPC Sample.</p>
+  </div>
+  <div class="stripes3"><div class="s1"></div><div class="s2"></div><div class="s3"></div></div>
+  <div class="meta"><div><b>Time</b>60 to 90 minutes: happily split over two sittings</div><div><b>Starts from</b>Slots 108 to 110, still [[~INIT]]</div><div><b>Outcome</b>A finished bank of ten sounds, slots 101 to 110</div></div>
+
+  <h2><span class="tag">The Idea</span>Thinking like a sound designer</h2>
+  <p>Professional sound designers rarely start by turning knobs at random. They start with a picture: <em>a cold wind across a hillside</em>, <em>a bell heard underwater</em>. Then they ask five questions, and you now know how to answer every one:</p>
+  <table class="ref">
+    <tr><th>Question</th><th>Where you answer it</th></tr>
+    <tr><td>What is it made of?</td><td>Sources: wavetable, sub, noise (Lesson 2)</td></tr>
+    <tr><td>How does it live and die?</td><td>Envelopes (Lesson 3)</td></tr>
+    <tr><td>Is it dark or bright?</td><td>The filter (Lesson 4)</td></tr>
+    <tr><td>Does it move, and how?</td><td>LFOs and unison (Lessons 5 and 6)</td></tr>
+    <tr><td>What space does it live in?</td><td>Effects (Lesson 7)</td></tr>
+  </table>
+  <p>A <strong>sound bank</strong> is a collection that works together: named clearly, sorted into categories, quick to find. Tonight you'll add three sounds from short recipes, try one sound of your own with no recipe at all, then tidy the whole set. A natural place to pause is after the recipes.</p>
+
+  <h2><span class="tag">Meet the Controls</span>Nothing new</h2>
+  <!--PANEL:l8|Every control tonight is one you already know.-->
+  <dl class="controls">
+    <div><dt>[[HOME]]</dt><dd>Hold to star a favourite.</dd></div>
+    <div><dt>[[@ALGORITHM]]</dt><dd>On HOME: categories, and FAVORITES.</dd></div>
+    <div><dt>[[SAVE]]</dt><dd>Rename, re-categorise, or copy to a new slot.</dd></div>
+    <div><dt>Everything else</dt><dd>From Lessons 2 to 7.</dd></div>
+  </dl>
+  <p>Each recipe below lists only what changes from an INIT slot. Work down the table, then play and adjust by ear. When a recipe says &#8220;about&#8221;, it means it.</p>
+
+  <h2><span class="tag">Let's Make Something</span>Three recipes</h2>
+  <h3><span class="part">A</span>NIGHT DRONE &#183; slot 108 &#183; MISC</h3>
+  <p>A dark, slowly shifting hum to hold under other sounds.</p>
+  <table class="ref recipe">
+    <tr><th>Where</th><th>Setting</th><th>Why</th></tr>
+    <tr><td>OSC A, page 1</td><td>table [[~DEFAULT]], WT POS about 5</td><td>A midpoint of the table, less buzzy than frame 1</td></tr>
+    <tr><td>OSC A, page 2</td><td>VOICES 3, DETUNE about 10%</td><td>Slow beating (Lesson 6)</td></tr>
+    <tr><td>OSC A, page 3</td><td>OCT [[~-1]]</td><td>Deeper</td></tr>
+    <tr><td>SUB</td><td>SUB about 45%</td><td>A floor</td></tr>
+    <tr><td>FILTER, page 1</td><td>CUTOFF about 600 Hz, RES about 35%</td><td>Dark with a hint of ring</td></tr>
+    <tr><td>ENV 1</td><td>ATTACK about 3 s, RELEASE about 5 s</td><td>Fades in and out like weather</td></tr>
+    <tr><td>LFO 1</td><td>BPM [[~OFF]], RATE about 0.07 Hz, DEST [[~CUTOFF]], AMOUNT about 20%, mode [[~FREE]]</td><td>The filter slowly breathes (Lesson 5)</td></tr>
+    <tr><td>FX RACK</td><td>slot 5, REVERB, MODE [[~HALL]]; REVERB MIX about 35%</td><td>Distance</td></tr>
+  </table>
+  <p>Hold one low note, or two notes a fifth apart, for as long as you like. Save to <strong>108</strong> as [[~NIGHT DRONE]], category [[~MISC]].</p>
+
+  <h3><span class="part">B</span>GLASS KEYS &#183; slot 109 &#183; PLUCK</h3>
+  <p>A bright, ringing plucked key with chorus shimmer.</p>
+  <table class="ref recipe">
+    <tr><th>Where</th><th>Setting</th><th>Why</th></tr>
+    <tr><td>OSC A, page 1</td><td>table [[~NICE PLUGGER]]; sweep WT POS and pick a frame you like</td><td>A table made for plucks</td></tr>
+    <tr><td>OSC A, page 3</td><td>OCT [[~+1]]</td><td>Higher and lighter</td></tr>
+    <tr><td>ENV 1</td><td>ATTACK minimum, DECAY about 800 ms, SUSTAIN [[~-inf dB]], RELEASE about 600 ms</td><td>A longer ring than SOFT PLUCK (Lesson 3)</td></tr>
+    <tr><td>FILTER, page 1</td><td>CUTOFF about 5 kHz</td><td>Bright but not brittle</td></tr>
+    <tr><td>FX RACK</td><td>slot 2, CHORUS, turn MODE on; slot 5, REVERB, MODE [[~PLATE]]</td><td>Shimmer and sheen</td></tr>
+  </table>
+  <p>Save to <strong>109</strong> as [[~GLASS KEYS]], category [[~PLUCK]].</p>
+
+  <h3><span class="part">C</span>WIND &#183; slot 110 &#183; MISC</h3>
+  <p>A sound effect with no pitch at all: filtered noise, moved by an LFO.</p>
+  <table class="ref recipe">
+    <tr><th>Where</th><th>Setting</th><th>Why</th></tr>
+    <tr><td>OSC A, page 1</td><td>LEVEL [[~0%]]</td><td>No oscillator tone at all</td></tr>
+    <tr><td>SUB, page 1</td><td>NOISE about 70%</td><td>Noise is the only source</td></tr>
+    <tr><td>SUB, page 2</td><td>COLOR [[~PINK]]</td><td>Softer than white noise</td></tr>
+    <tr><td>FILTER, page 1</td><td>CUTOFF about 800 Hz, RES about 55%</td><td>The resonance gives the wind a whistle</td></tr>
+    <tr><td>LFO 1</td><td>BPM [[~OFF]], RATE about 0.2 Hz, DEST [[~CUTOFF]], AMOUNT about 45%, mode [[~FREE]]</td><td>Gusts</td></tr>
+    <tr><td>ENV 1</td><td>ATTACK about 2 s, RELEASE about 3 s</td><td>Wind arrives and leaves gradually</td></tr>
+    <tr><td>FX RACK</td><td>slot 5, REVERB, MODE [[~HALL]]</td><td>Open space</td></tr>
+  </table>
+  <p>Hold any key: they all sound the same, because noise has no pitch. Save to <strong>110</strong> as [[~WIND]], category [[~MISC]].</p>
+
+  <h2 class="sec"><span class="tag">Optional challenge</span>A sound with no recipe</h2>
+  <p>The recipes proved you can follow instructions. This proves you understand them. There's no right answer, and nothing here can affect your ten saved sounds.</p>
+  <ol class="steps">
+    <li><strong>Imagine first, hands off the FM-1.</strong> Pick a sound you can picture clearly: <em>a ship's horn in fog</em>, <em>a music box in another room</em>, <em>rain on a tin roof</em>, or one of your own. Say it out loud, or write it down.</li>
+    <li><strong>Answer the five questions on paper.</strong> Which source makes it: a wavetable, the sub, noise? How does its volume change over time: pluck, swell, steady? Bright or dark? Does it move, and how fast? What kind of space does it live in?</li>
+    <li><strong>Build it</strong> in the next slot still named [[~INIT]] (111 if your bank is untouched), working through your answers in order.</li>
+    <li><strong>Compare</strong> what you hear with what you imagined. Which question did you answer wrongly? Change that one thing, listen again, and repeat.</li>
+    <li><strong>Save it</strong> under a name of your choosing, checking that the SAVE page says [[~REPLACES INIT]].</li>
+  </ol>
+  <div class="ear"><b class="h">If it doesn't match</b>That's the useful part. Getting from &#8220;not quite&#8221; to &#8220;yes, that&#8221; is the skill. Most fixes are one of four moves: a different source, a different envelope, the filter, or less effect.</div>
+
+  <h3><span class="part">D</span>Tidy the bank</h3>
+  <ol class="steps">
+    <li>Visit each of your ten slots, 101 to 110, with [[@PRESETS]]. Play each one for a moment. Does its name still describe it? Is its category right?</li>
+    <li>To rename or re-categorise a sound: load it, press [[SAVE]] (it opens on its own slot), change the name or CATEGORY, and press [[SAVE]] again.</li>
+    <li>Hold [[HOME]] on each of your sounds to star it as a favourite. If a title already shows a star, leave it: holding again would remove it.</li>
+    <li>Press [[HOME]] and turn [[@ALGORITHM]] until you reach [[~FAVORITES]]. Now [[@PRESETS]] steps through only your starred sounds: your own instrument, ready to play.</li>
+  </ol>
+  <div class="note"><b class="h">A copy for safekeeping (optional, needs a computer)</b>Shrub's browser editor at <strong>shrub.audio/editor</strong> can back up everything on your FM-1. In Chrome or Edge, connect the FM-1 with USB, press <strong>Connect FM-1</strong>, open the <strong>LIBRARY</strong> tab and use <strong>Get from FM-1</strong>, then save the bank to your computer from the Bank menu. The file (a <strong>.shrubbank</strong>) holds all 128 slots, their wavetables and your MIDI map, so it's a complete copy of your sounds.</div>
+
+  <h2 class="sec"><span class="tag">Optional</span>Record a Shrub sound into the MPC Sample</h2>
+  <p>Your sounds can leave the FM-1 and become samples you chop, pitch and sequence on the MPC. If you've worked through <em>MPC, Gently</em>, this is its Lesson 6 recording method with a cable instead of the microphone.</p>
+  <!--FIG:mpc_hookup|The FM-1's AUDIO OUT into the MPC's two AUDIO IN sockets.-->
+  <ol class="steps">
+    <li>Turn the FM-1's [[@MASTER]] down. You need a cable with a <strong>3.5 mm TRS stereo plug</strong> at one end and <strong>two 6.35 mm (1/4 inch) TS mono plugs</strong> at the other, usually sold as a &#8220;3.5 mm to dual 1/4 inch&#8221; or &#8220;insert&#8221; cable. Plug the 3.5 mm end into the FM-1's <strong>AUDIO OUT</strong>. On the MPC Sample's back, plug the left plug (marked L, often white or black) into <strong>AUDIO IN 1/L</strong> and the right plug (marked R, usually red) into <strong>AUDIO IN 2/R</strong>.</li>
+    <li>On the MPC, press [[SAMPLE]] and choose an empty bank with [[PAD BANK]].</li>
+    <li>Press [[SAMPLE RECORD]]. Set [[@K1]] (Source) to [[~Rear]], which records both AUDIO IN sockets in stereo; [[@K2]] to [[~Free]]; and [[@K3]] (Threshold) all the way down. Press [[B1]] until Monitor reads [[~Auto]].</li>
+    <li>On the FM-1, load [[~WIDE SKY]] and play a chord, bringing [[@MASTER]] up until you hear it through the MPC. Watch the MPC's meters: aim for strong but never red. If they light red, turn the FM-1's MASTER down, or the <strong>REC GAIN</strong> knob on the MPC's back; if they barely move, turn up. Set it by eye and ear: there's no single right number.</li>
+    <li>Tap an empty pad to start recording. Play one chord on the FM-1 and hold it; let go and wait for the release to fade completely. Tap the pad again to stop.</li>
+    <li>Press [[SAMPLE]] and tap the pad. Your Shrub chord is now an MPC sample, ready to trim and chop.</li>
+  </ol>
+  <div class="ear"><b class="h">Good habits for sampling synths</b>Record a little silence before and after each sound; you can trim it later. One recorded note is one sample: it doesn't spread itself across the pads at different pitches by itself. To play a bass or pluck melodically, record a long note from the middle of the keyboard and repitch it on the MPC (16 Levels in Tune mode does this, as in <em>MPC, Gently</em>), or record each note you need. For ECHO STEPS, set the FM-1's TEMPO to match your MPC project so the loop chops cleanly on the beat.</div>
+
+  <div class="play">
+    <h2><span class="tag">Have a Play</span>Keep going</h2>
+    <ul>
+      <li>Do the challenge again with a harder picture: <em>a submarine's sonar</em>, <em>a door creaking open in space</em>.</li>
+      <li>Take a factory preset apart: load it and walk through EDIT, ENV, LFO and FX to see how it was made. You'll recognise almost everything now.</li>
+      <li>Make a variation: load one of your sounds, change one thing, and save it to the next empty slot with a name like [[~DEEP BASS 2]].</li>
+    </ul>
+  </div>
+
+  <div class="wrap"><div class="cols">
+    <div class="learned"><h2>What You've Learned</h2><ul>
+      <li>Five questions turn an imagined sound into settings.</li>
+      <li>A recipe lists only what changes from INIT.</li>
+      <li>Rename, re-categorise and star sounds to keep a bank tidy.</li>
+      <li>FAVORITES turns your bank into your own instrument.</li>
+      <li>AUDIO OUT into the MPC's AUDIO IN turns a patch into a sample.</li>
+    </ul></div>
+    <div class="creation"><h2><span class="tag">Your Creation</span>A bank of ten</h2>
+      <p>MY CHILL PAD, FIRST WAVE, SOFT PLUCK, DEEP BASS, SLOW TIDE, WIDE SKY, ECHO STEPS, NIGHT DRONE, GLASS KEYS and WIND.</p>
+      <p><span class="slot">Slots 101 to 110</span>, starred as favourites.</p></div>
+  </div></div>
+</section>

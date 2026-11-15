@@ -1,0 +1,154 @@
+<section class="cover">
+  <!--COVERART-->
+  <div class="wordmark"><span class="a">shrub, </span><span class="b">gently</span></div>
+  <div class="tagline">from first note to first sound</div>
+  <div class="device">An illustrated beginner's guide to wavetable synthesis on the <span style="white-space:nowrap">M-VAVE FM-1</span></div>
+  <div class="foot"><span>An illustrated handbook</span><span>Eight lessons. One sound bank.</span></div>
+</section>
+
+<section class="toc" id="contents">
+  <h1>Contents</h1>
+  <ol>
+    <li class="group">Before you begin</li>
+    <li><a href="#welcome"><span class="n">&#183;</span><span class="t">Welcome<small>What this book is, and how it works</small></span><span class="p" data-href="#welcome"></span></a></li>
+    <li><a href="#meet"><span class="n">&#183;</span><span class="t">Meet the FM-1<small>Knobs, buttons, keys and the screen</small></span><span class="p" data-href="#meet"></span></a></li>
+    <li><a href="#understanding"><span class="n">&#183;</span><span class="t">Understanding Shrub<small>How a sound travels from key to ear</small></span><span class="p" data-href="#understanding"></span></a></li>
+    <li class="group">The lessons</li>
+    <li><a href="#l1"><span class="n">01</span><span class="t">Hello, Shrub<small>Presets, favourites, and your first saved sound</small></span><span class="p" data-href="#l1"></span></a></li>
+    <li><a href="#l2"><span class="n">02</span><span class="t">The Shape of Sound<small>Waves, pitch, harmonics and wavetables</small></span><span class="p" data-href="#l2"></span></a></li>
+    <li><a href="#l3"><span class="n">03</span><span class="t">Give It a Life<small>Envelopes, and a soft plucked sound</small></span><span class="p" data-href="#l3"></span></a></li>
+    <li><a href="#l4"><span class="n">04</span><span class="t">Dark and Bright<small>Filters, and a warm deep bass</small></span><span class="p" data-href="#l4"></span></a></li>
+    <li><a href="#l5"><span class="n">05</span><span class="t">Sounds That Move<small>LFOs, and a slowly evolving texture</small></span><span class="p" data-href="#l5"></span></a></li>
+    <li><a href="#l6"><span class="n">06</span><span class="t">More Than One Voice<small>Unison, detune and layering</small></span><span class="p" data-href="#l6"></span></a></li>
+    <li><a href="#l7"><span class="n">07</span><span class="t">Space and Motion<small>Delay, reverb, scales and the arpeggiator</small></span><span class="p" data-href="#l7"></span></a></li>
+    <li><a href="#l8"><span class="n">08</span><span class="t">Your First Sound Bank<small>Three more sounds, tidied, and into the MPC</small></span><span class="p" data-href="#l8"></span></a></li>
+    <li class="group">Keep close</li>
+    <li><a href="#quickref"><span class="n">&#183;</span><span class="t">Quick Reference</span><span class="p" data-href="#quickref"></span></a></li>
+    <li><a href="#trouble"><span class="n">&#183;</span><span class="t">When Things Go Wrong</span><span class="p" data-href="#trouble"></span></a></li>
+    <li><a href="#glossary"><span class="n">&#183;</span><span class="t">Glossary</span><span class="p" data-href="#glossary"></span></a></li>
+    <li><a href="#next"><span class="n">&#183;</span><span class="t">Where Next</span><span class="p" data-href="#next"></span></a></li>
+    <li><a href="#edition"><span class="n">&#183;</span><span class="t">About This Edition</span><span class="p" data-href="#edition"></span></a></li>
+  </ol>
+</section>
+
+<section class="chapter" id="welcome">
+  <div class="kicker">Before you begin</div>
+  <h1 data-short="Welcome">Welcome</h1>
+  <p>Somewhere inside your little FM-1 there is now a synthesiser that grew out of Serum, one of the most loved sound-design instruments of the last fifteen years. Steve Duda, who made Serum, wrote a free firmware for the FM-1 called <strong>Shrub</strong> (on screen and in its own manual it's written SHRUB). It turns the box into a <strong>wavetable synth</strong>: a machine for building sounds from scratch, one decision at a time.</p>
+  <p>This book teaches you to make those decisions. You don't need to know anything about synthesisers or music theory. You need curiosity, a quiet half hour, and something to listen on.</p>
+
+  <h2 class="sec"><span class="tag">The promise</span>What you'll be able to do</h2>
+  <p>By the end of Lesson 8 you'll have built a small <strong>sound bank</strong>: ten of your own patches, saved, named and sorted, including a soft pluck, a deep bass, a slowly drifting pad, a wide shimmering synth, a rhythmic echoing pattern and a gust of wind. More importantly, you'll know <em>why</em> each one sounds the way it does, so when you imagine a sound you'll have a good idea which knobs will take you there.</p>
+  <p>This book doesn't try to cover every feature Shrub has. Its official Operation Guide does that well. This book picks the dozen ideas that matter most and gives each one the time to sink in.</p>
+
+  <h2 class="sec"><span class="tag">What you need</span>Equipment</h2>
+  <ul class="plain">
+    <li><strong>An M-VAVE FM-1 running Shrub {{FIRMWARE}}</strong>, charged. The lessons were written for this version. If yours shows a different number (Meet the FM-1 shows where to look), most things will still match, but small details may differ.</li>
+    <li><strong>Headphones or speakers.</strong> The FM-1's built-in speaker is fine for Lesson 1, but low basses and stereo width only really come alive on headphones or monitors.</li>
+    <li><strong>No computer</strong> for the lessons. Every step happens on the FM-1. A computer with Chrome or Edge is only needed to install or update Shrub, or if you'd like to use the optional browser editor later.</li>
+    <li><strong>For the last part of Lesson 8 only:</strong> your Akai MPC Sample and a cable with a 3.5 mm stereo plug at one end and two 6.35 mm (1/4 inch) plugs at the other.</li>
+  </ul>
+
+  <div class="note"><b class="h">Not running Shrub yet?</b>Shrub installs from a web page at <strong>shrub.audio</strong>, over a USB cable, using Chrome or Edge on a computer. Follow the official instructions there, close any other music software first, and leave the cable alone until the installer says it has finished (about two minutes). If an install is ever interrupted, the official advice is simply to run the installer again: it carries on where it stopped. You can return to M-VAVE's own firmware at any time with M-VAVE's updater. Please use only these official routes.</div>
+
+  <h2 class="sec"><span class="tag">How it works</span>Every lesson has the same six parts</h2>
+  <table class="ref">
+    <tr><th>Part</th><th>What happens</th></tr>
+    <tr><td><strong>The Idea</strong></td><td>One or two concepts, with pictures, and why they matter musically.</td></tr>
+    <tr><td><strong>Meet the Controls</strong></td><td>An FM-1 diagram showing only the controls you'll use tonight.</td></tr>
+    <tr><td><strong>Let's Make Something</strong></td><td>Numbered steps that end in a sound you can keep.</td></tr>
+    <tr><td><strong>Have a Play</strong></td><td>Optional experiments. Nothing here can break your saved sound.</td></tr>
+    <tr><td><strong>What You've Learned</strong></td><td>A short summary to come back to.</td></tr>
+    <tr><td><strong>Your Creation</strong></td><td>The sound you made, where it's saved, and how to find it again.</td></tr>
+  </table>
+  <p>Lessons 1 to 7 take about 30 to 45 minutes each; Lesson 8 is longer and splits happily over two sittings. Each lesson ends with a saved patch, so there's always a natural place to stop.</p>
+
+  <h3>Reading the steps</h3>
+  <table class="ref">
+    <tr><th>You'll see</th><th>It means</th></tr>
+    <tr><td>[[EDIT]] [[SAVE]]</td><td>A button on the FM-1.</td></tr>
+    <tr><td>[[@KNOB 1]] [[@PRESETS]]</td><td>A knob. KNOB 1 to KNOB 4 are the four in a row at the top right.</td></tr>
+    <tr><td>[[~SAVED]]</td><td>Words exactly as they appear on the screen.</td></tr>
+    <tr><td><span class="target">about 350 ms</span></td><td>A target. Anywhere close is fine: trust your ears.</td></tr>
+  </table>
+  <p>Shrub's knobs speed up when you spin them, so nobody can land on exactly the same number every time. When a step gives a value, get close and listen. The numbers are signposts, not tests.</p>
+
+  <h3>Where your sounds will live</h3>
+  <p>Shrub has 128 memory slots. Slots 1 to 100 hold the factory presets; slots 101 to 128 start empty, labelled [[~INIT]]. Each lesson saves into the next empty slot, so by the end your sounds sit together:</p>
+  <!--FIG:bank|Your sound bank by the end of Lesson 8. Factory presets stay untouched in slots 1 to 100.-->
+  <div class="oops"><b class="h">Already used some of these slots?</b>If you've saved sounds of your own before, some of slots 101 to 110 may not be empty. A slot you've saved into shows a <strong>U</strong> before its number (U103) and keeps the name you gave it. Before every save, read the top right of the SAVE page: only press [[SAVE]] again when it says [[~REPLACES INIT]]. If it names one of your sounds, turn [[@KNOB 1]] (SLOT) to the next slot that says [[~REPLACES INIT]], and use that number wherever the book says 101 to 110. Jot your numbers down as you go.</div>
+</section>
+
+<section class="chapter" id="meet">
+  <div class="kicker">Before you begin</div>
+  <h1 data-short="Meet the FM-1">Meet the FM-1</h1>
+  <p>The FM-1 is small enough to hold in one hand, and Shrub uses every control on it. This tour takes about ten minutes. You don't need to memorise it: each lesson introduces the controls again as you need them.</p>
+  <!--FIG:fm1_tour|The FM-1 running Shrub. Schematic drawing, not to scale.-->
+  <dl class="controls">
+    <div><dt>1 &#183; Left knobs</dt><dd>[[@MASTER]] is the volume. [[@PRESETS]] browses sounds from anywhere. [[@SELECT]] turns pages. [[@ALGORITHM]] is the &#8220;type&#8221; knob: it chooses a wavetable, a filter type, an effect's mode and so on.</dd></div>
+    <div><dt>2 &#183; Octave</dt><dd>[[OCT-]] and [[OCT+]] shift the keys down or up, up to three octaves each way. A lit button tells you you're away from the middle.</dd></div>
+    <div><dt>3 &#183; Screen</dt><dd>Shows where you are and what the four screen knobs are doing.</dd></div>
+    <div><dt>4 &#183; Screen knobs</dt><dd>The four knobs at top right, [[@KNOB 1]] to [[@KNOB 4]], change whatever the bottom of the screen shows. Their jobs change on every page.</dd></div>
+    <div><dt>5 &#183; Buttons</dt><dd>Twelve buttons. Most open a <strong>section</strong> of the synth; the rest save, play and record.</dd></div>
+    <div><dt>6 &#183; Keys</dt><dd>27 keys. They don't respond to how hard you press: every note plays at the same strength.</dd></div>
+  </dl>
+
+  <h2 class="sec"><span class="tag">The knobs</span>Seven endless knobs and a volume</h2>
+  <p>Apart from MASTER, the knobs turn forever in either direction: there's no end stop, because the screen keeps track of the value. Turn slowly for fine changes, one small step per click; flick them and they speed up. When you change something with named choices, like a wavetable, its name flashes up large on the screen for a moment.</p>
+
+  <h2 class="sec"><span class="tag">The screen</span>Every page has the same three layers</h2>
+  <!--FIG:screen_anatomy|A typical page. When a knob is being moved by something else (you'll meet this in Lesson 5) it wears a blue ring.-->
+  <p>Coloured <strong>pills</strong> across the top show the parts of the section you're in, with the current one lit. The little <strong>dots</strong> beside the title show how many pages that part has, and which one you're on.</p>
+
+  <h2 class="sec"><span class="tag">The buttons</span>Sections, and how to move around</h2>
+  <p>Shrub's whole synth is divided into sections, each behind a button. Press a section button to open it. <strong>Press the same button again</strong> to step to that section's next part. This is the most useful habit in the book.</p>
+  <!--FIG:section_map|What each button opens, and what pressing it again does.-->
+  <p>Four rules cover nearly all navigation:</p>
+  <ol class="steps">
+    <li><strong>Press a section button until the right pill is lit.</strong> The steps in this book always say which pill you're aiming for (&#8220;press [[EDIT]] until [[~OSC A]] is lit&#8221;), because the FM-1 sometimes reopens the part you visited last.</li>
+    <li><strong>[[@SELECT]] turns the pages</strong> of the part you're on. Watch the dots.</li>
+    <li><strong>[[@ALGORITHM]] chooses the type</strong> of whatever you're looking at.</li>
+    <li><strong>[[@PRESETS]] always takes you home</strong> to the HOME page, from anywhere. If you've changed the sound, it protects you first (Lesson 1).</li>
+  </ol>
+
+  <h2 class="sec"><span class="tag">The keys</span>Just over two octaves</h2>
+  <!--FIG:keyboard|The keyboard runs from F to G. The two dots mark the notes called C, useful landmarks.-->
+  <p>The keys light up to show which notes are sounding, wherever they come from. You don't need to read music for this book. When a step says &#8220;a low note&#8221;, any key towards the left will do.</p>
+
+  <h2 class="sec"><span class="tag">Connections</span>The back edge</h2>
+  <!--FIG:rear_panel|Plugging into AUDIO OUT switches the built-in speaker off.-->
+  <p>A little battery inside keeps the FM-1 going for hours. When it runs low, [[~BAT LOW]] appears at the top of the screen; plug in a USB charger. The GLOBAL page (Lesson 7) shows the exact percentage, and the firmware version too: check it reads {{FIRMWARE}} if you'd like everything to match this book.</p>
+  <div class="why"><b class="h">It remembers where you were</b>A couple of seconds after you stop changing things, Shrub quietly keeps a copy of the sound you're working on. Switch off, switch on, and it's still there. That's a safety net, not a save: only [[SAVE]] keeps a sound in a slot of its own.</div>
+</section>
+
+<section class="chapter" id="understanding">
+  <div class="kicker">Before you begin</div>
+  <h1 data-short="Understanding Shrub">Understanding Shrub</h1>
+  <p>Every sound Shrub makes takes the same journey. Once you can picture it, every page on the screen becomes a stop along the way, and the synth stops feeling like a maze.</p>
+  <!--FIG:signal_flow|The road from key to ear. Sound flows left to right; modulation reaches up from underneath and turns knobs for you.-->
+
+  <h2 class="sec"><span class="tag">The journey</span>Four stops</h2>
+  <dl class="controls">
+    <div><dt>1 &#183; Sources</dt><dd>Four things make raw sound. <strong>OSC A</strong> and <strong>OSC B</strong> are wavetable oscillators, the heart of Shrub. The <strong>SUB</strong> adds a simple wave, usually low, and <strong>NOISE</strong> adds hiss or rumble. Lesson 2.</dd></div>
+    <div><dt>2 &#183; Filter</dt><dd>Removes part of the sound to change its colour: darker, brighter, thinner. Lesson 4.</dd></div>
+    <div><dt>3 &#183; ENV 1</dt><dd>An <strong>envelope</strong>: it shapes each note's volume over time, so a sound can pluck, swell or linger. Lesson 3.</dd></div>
+    <div><dt>4 &#183; FX RACK</dt><dd>Effects such as delay and reverb, which add space and character. Lesson 7.</dd></div>
+  </dl>
+  <p>Underneath runs <strong>modulation</strong>: slow-moving helpers (LFOs, extra envelopes) that turn knobs automatically, so a sound can drift and breathe on its own. They connect through a 16-slot routing table called the <strong>matrix</strong>. Lesson 5.</p>
+
+  <h2 class="sec"><span class="tag">One thing that's different</span>All notes share one filter</h2>
+  <p>In most big synths each note gets its own filter. Shrub mixes the notes together first and then sends them through a <strong>single filter</strong>. On a single note you'll never notice. On chords, all the notes get darker or brighter together. That's partly why Shrub is so good at basses and lead lines, and it's why Lesson 4 builds a bass rather than a chord sound. The envelopes ENV 2 and ENV 3 and the four LFOs are shared the same way: one movement for every note, not one each.</p>
+
+  <h2 class="sec"><span class="tag">A map of the book</span>Which lesson visits which stop</h2>
+  <table class="ref">
+    <tr><th>Stop</th><th>Section button</th><th>Lesson</th></tr>
+    <tr><td>Presets, HOME, saving</td><td>[[HOME]] [[SAVE]]</td><td>1, and every lesson after</td></tr>
+    <tr><td>Oscillators, sub and noise</td><td>[[EDIT]]</td><td>2, then 6</td></tr>
+    <tr><td>Envelopes</td><td>[[ENV]]</td><td>3, then 4</td></tr>
+    <tr><td>Filter</td><td>[[EDIT]] (its last part)</td><td>4</td></tr>
+    <tr><td>LFOs and the matrix</td><td>[[LFO]]</td><td>5</td></tr>
+    <tr><td>Voicing and global settings</td><td>[[GLO]]</td><td>4, 6 and 7</td></tr>
+    <tr><td>Effects, scales, arpeggiator</td><td>[[FX]] [[SCL]] [[ARP]]</td><td>7</td></tr>
+  </table>
+  <div class="ear"><b class="h">Listening is the skill</b>Synthesis can look like engineering, but it's really listening. Every time you turn a knob in this book, stop and ask: what changed? Brighter or darker? Closer or further away? Moving or still? Those small questions build the intuition that lets you make sounds you imagine.</div>
+</section>

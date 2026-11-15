@@ -1,0 +1,205 @@
+<section class="opener" id="l5">
+  <div class="band">
+    <!--SPRIG:5-->
+    <div class="lbl">Lesson</div>
+    <div class="num">05</div>
+    <h1 data-short="Lesson 5 &#183; Sounds That Move">Sounds That Move</h1>
+    <p class="dek">Hand a knob to an invisible helper, and a still sound starts to drift and breathe on its own.</p>
+  </div>
+  <div class="stripes3"><div class="s1"></div><div class="s2"></div><div class="s3"></div></div>
+  <div class="meta"><div><b>Time</b>About 45 minutes</div><div><b>Starts from</b>An empty slot, [[~105 INIT]]</div><div><b>Outcome</b>[[~SLOW TIDE]], an evolving atmospheric pad, in slot 105</div></div>
+
+  <h2><span class="tag">The Idea</span>Something else turns the knob</h2>
+  <p>In Lesson 2 you swept WT POS by hand and heard the sound change character. Imagine a patient helper who could keep turning that knob, slowly back and forth, forever, while your hands stay on the keys. That's <strong>modulation</strong>: one part of the synth moving another part for you.</p>
+  <p>The classic helper is the <strong>LFO</strong>, short for <strong>low-frequency oscillator</strong>. It's an oscillator like the ones in Lesson 2, but so slow you can't hear it as a note: one cycle might take a second, or ten, or a minute. Instead of listening to it, you connect it to a knob, and the knob follows its shape.</p>
+  <!--FIG:lfo|An LFO's slow triangle, connected to WT POS. With BIPOLAR off (as it starts), the LFO pushes the wavetable position up from where you set it, then lets it fall back.-->
+  <p>Three settings matter most:</p>
+  <ul class="plain">
+    <li><strong>RATE</strong>: how fast it moves. Slow for drifting, fast for wobbling.</li>
+    <li><strong>DEST</strong> (destination): which knob it moves.</li>
+    <li><strong>AMOUNT</strong>: how far it pushes that knob away from where you've set it. Out of the box Shrub's LFOs push one way only, upwards and back, because a setting called <strong>BIPOLAR</strong> starts off. Switch BIPOLAR on and the LFO swings the knob both above and below your setting.</li>
+  </ul>
+  <p>Behind the scenes, every connection like this is stored as a row in Shrub's <strong>matrix</strong>, a table of up to 16 routings. You don't need to visit it tonight: an LFO's DEST and AMOUNT knobs fill in a matrix row for you. When a knob is being moved by modulation, it wears a <strong>blue ring</strong> on the screen showing how far it travels.</p>
+  <p>Shrub's four LFOs are <em>shared</em> by every note you play, which suits pads perfectly: the whole chord drifts together, like a tide.</p>
+
+  <h2><span class="tag">Meet the Controls</span>The LFO pages</h2>
+  <!--PANEL:l5|LFO opens LFO 1; press again for LFO 2, 3, 4, then CHAOS and the MATRIX.-->
+  <dl class="controls">
+    <div><dt>[[LFO]]</dt><dd>Opens LFO 1. Press again for the next LFO.</dd></div>
+    <div><dt>[[@ALGORITHM]]</dt><dd>The LFO's mode: [[~FREE]], [[~RETRIG]] or [[~ENVELOPE]].</dd></div>
+    <div><dt>Page 1</dt><dd>RATE, SKEW, DEST, AMOUNT.</dd></div>
+    <div><dt>Page 2</dt><dd>BPM (sync to tempo), MODE, PHASE, BIPOLAR.</dd></div>
+  </dl>
+  <!--SCR:lfo_tide|LFO 1 tonight: a slow, free-running triangle, aimed at oscillator A's wavetable position.-->
+  <p><strong>The modes.</strong> [[~RETRIG]], the default, restarts the LFO every time you play a note. [[~FREE]] lets it keep running regardless, so the movement flows across your playing. [[~ENVELOPE]] runs it just once per note.</p>
+  <p><strong>BPM.</strong> On an INIT slot, BPM is on and RATE shows a note length such as [[~1/4]], locked to the tempo. With BPM off, RATE shows hertz: [[~0.10 Hz]] is one cycle every ten seconds.</p>
+  <div class="clear"></div>
+
+  <h2><span class="tag">Let's Make Something</span>A slow tide</h2>
+  <h3><span class="part">A</span>Choose a wavetable with a journey</h3>
+  <ol class="steps">
+    <li>Turn [[@PRESETS]] to <strong>105</strong>, [[~INIT]].</li>
+    <li>Press [[EDIT]] until [[~OSC A]] is lit, page 1. Turn [[@ALGORITHM]] until the table's name reads [[~DUDA CHOIR]]. (It's well along the list; spin quickly, then slow down.)</li>
+    <li>Hold a note and sweep [[@KNOB 1]] (WT POS) slowly through all 38 frames. Vowel-like colours come and go. That sweep is what the LFO will do for you.</li>
+    <li>Leave WT POS at <span class="target">about 12</span>.</li>
+  </ol>
+
+  <h3><span class="part">B</span>Give it a pad's life</h3>
+  <ol class="steps" start="5">
+    <li>Press [[ENV]] until [[~ENV 1]] is lit, page 1. Set ATTACK to <span class="target">about 1.5 s</span> and RELEASE to <span class="target">about 3 s</span>. Leave SUSTAIN at [[~0.0 dB]]. (A Lesson 3 swell.)</li>
+    <li>Press [[HOME]] and set CUTOFF to <span class="target">about 1.5 kHz</span> for softness. (Lesson 4.)</li>
+  </ol>
+
+  <h3><span class="part">C</span>Hand WT POS to LFO 1</h3>
+  <ol class="steps" start="7">
+    <li>Press [[LFO]] until [[~LFO 1]] is lit.</li>
+    <li>Turn [[@SELECT]] to page 2 and turn [[@KNOB 1]] (BPM) to [[~OFF]]. Leave [[@KNOB 4]] (BIPOLAR) at [[~OFF]].</li>
+    <li>Turn [[@SELECT]] back to page 1. Set [[@KNOB 1]] (RATE) to <span class="target">about 0.10 Hz</span>.</li>
+    <li>Turn [[@KNOB 3]] (DEST) slowly clockwise until it reads [[~A WT POS]]. It's the first destination in the list, straight after [[~-]] (none).</li>
+    <li>Turn [[@KNOB 4]] (AMOUNT) up to <span class="target">about 40%</span>.</li>
+    <li>Turn [[@ALGORITHM]] until the mode at the top right reads [[~FREE]].</li>
+    <li>Hold a chord for twenty seconds and just listen. The colour of the sound slowly blossoms and recedes, from frame 12 up into later frames and back. You're not touching anything. (Peek at OSC A: WT POS now wears a blue ring showing the LFO's range.)</li>
+  </ol>
+
+  <h3><span class="part">D</span>A second, slower current</h3>
+  <ol class="steps" start="14">
+    <li>Press [[LFO]] again until [[~LFO 2]] is lit.</li>
+    <li>As before: page 2, BPM [[~OFF]] (BIPOLAR stays off); page 1, RATE <span class="target">about 0.07 Hz</span>, a little slower than LFO 1 (one cycle every fourteen seconds or so); mode [[~FREE]].</li>
+    <li>Turn DEST until it reads [[~CUTOFF]]. It comes after the oscillators' destinations (A WT POS, A WARP, A SEMI, A FINE, then the same four for B).</li>
+    <li>Set AMOUNT to <span class="target">about 15%</span>. Now the brightness drifts too, on a different cycle from the wavetable. Because one LFO takes about ten seconds and the other about fourteen, they keep slipping past each other: the two only line up again after well over a minute.</li>
+  </ol>
+  <div class="ear"><b class="h">Listen for</b>Two slow movements at speeds that don't divide neatly into each other is a classic trick for atmospheric sounds. It does come round again eventually, but so slowly that your ear keeps finding something new. Avoid exact doubles such as 0.10 and 0.05 Hz, which line up every cycle.</div>
+
+  <h3><span class="part">E</span>Save it</h3>
+  <ol class="steps" start="18">
+    <li>Press [[SAVE]] (check [[~SAVE TO 105]]), spell [[~SLOW TIDE]], set CATEGORY to [[~PAD]], and press [[SAVE]] again.</li>
+  </ol>
+
+  <div class="play">
+    <h2><span class="tag">Have a Play</span>Other currents</h2>
+    <ul>
+      <li>Speed LFO 1 up to 4 or 5 Hz: the drift becomes a shimmer. On LFO page 3, [[@KNOB 4]] (RANDOM) set to [[~S&amp;H]] turns the shape into random steps.</li>
+      <li>Switch BIPOLAR on (page 2) for LFO 1 and the wavetable swings below frame 12 as well as above it.</li>
+      <li>Press [[LFO]] until [[~CHAOS]] is lit. These two sources wander smoothly and, unlike LFOs, never repeat at all. Route them in the [[~MATRIX]] (the next press), where your two LFO routings already sit: KNOB 1 picks a slot, KNOB 2 the source, KNOB 3 the destination, KNOB 4 the amount.</li>
+    </ul>
+  </div>
+
+  <div class="wrap"><div class="cols">
+    <div class="learned"><h2>What You've Learned</h2><ul>
+      <li>Modulation: one part of the synth moves another.</li>
+      <li>An LFO is a slow, silent wave: RATE, DEST, AMOUNT.</li>
+      <li>FREE keeps it flowing; RETRIG restarts it per note.</li>
+      <li>Routings live in the matrix; a blue ring shows a moving knob.</li>
+      <li>BIPOLAR off pushes one way; on swings both ways.</li>
+      <li>Two LFOs at loosely related speeds take a long time to repeat.</li>
+    </ul></div>
+    <div class="creation"><h2><span class="tag">Your Creation</span>SLOW TIDE</h2>
+      <p>DUDA CHOIR with a slow swell, its wavetable (0.10 Hz) and filter (0.07 Hz) drifting on two free LFOs. Category PAD.</p>
+      <p><span class="slot">Slot 105</span>. Wonderful for long, held chords.</p></div>
+  </div></div>
+</section>
+
+<section class="opener" id="l6">
+  <div class="band">
+    <!--SPRIG:6-->
+    <div class="lbl">Lesson</div>
+    <div class="num">06</div>
+    <h1 data-short="Lesson 6 &#183; More Than One Voice">More Than One Voice</h1>
+    <p class="dek">Stack copies, nudge them out of tune, add a second oscillator, and a thin tone becomes wide and rich.</p>
+  </div>
+  <div class="stripes3"><div class="s1"></div><div class="s2"></div><div class="s3"></div></div>
+  <div class="meta"><div><b>Time</b>About 40 minutes</div><div><b>Starts from</b>An empty slot, [[~106 INIT]]</div><div><b>Outcome</b>[[~WIDE SKY]], a broad, shimmering synth, in slot 106</div></div>
+
+  <h2><span class="tag">The Idea</span>Many slightly different voices</h2>
+  <p>One violin sounds like a violin. Twenty violins sound like an orchestra, and not just because they're louder. No two players are perfectly in tune or perfectly in time, and those tiny differences blend into a rich, moving shimmer.</p>
+  <p>Synths copy this with <strong>unison</strong>: the oscillator plays several copies of itself at once, called <strong>voices</strong>, and <strong>detunes</strong> them, nudging each slightly sharp or flat. Spread them from left to right with <strong>width</strong> and the sound fills the stereo field.</p>
+  <!--FIG:unison|One voice against three detuned voices. The copies drift in and out of step, which you hear as shimmer and width.-->
+  <p>The other way to get richness is <strong>layering</strong>: combining different sources. You did a little in Lesson 2 with the sub. Tonight you'll bring in oscillator B as well, tuned an octave up for sparkle.</p>
+  <!--FIG:layering|Tonight's layers. Each source has a job, and together they make one sound.-->
+
+  <h3>Thickness costs notes</h3>
+  <p>Every unison voice is real work for the FM-1. Shrub shares a pool of <strong>16 voices</strong> between all the notes you play, and every note needs as many voices as its oscillators use together. So the thicker each note, the fewer notes fit at once. The Operation Guide puts the ceiling at four notes; the VOICING page always shows what the current sound can manage.</p>
+  <table class="ref tight">
+    <tr><th>Voices per note (OSC A + OSC B)</th><th>Notes at once (shown on VOICING)</th><th>Good for</th></tr>
+    <tr><td>3 + 1 = 4</td><td>4</td><td>Chords: tonight's patch</td></tr>
+    <tr><td>5 + 3 = 8</td><td>2</td><td>Single lines and leads</td></tr>
+  </table>
+  <p>When you play more notes than fit, Shrub doesn't glitch: it quietly takes over a voice that's already sounding. That's why tonight's patch uses three voices on oscillator A and just one on B. It still sounds wide, and it plays a four-note chord.</p>
+
+  <h2><span class="tag">Meet the Controls</span>Oscillator pages 2 and 3</h2>
+  <!--PANEL:l6|Tonight lives under EDIT, on more of each oscillator's pages.-->
+  <dl class="controls">
+    <div><dt>[[EDIT]]</dt><dd>OSC A, OSC B, SUB, FILTER.</dd></div>
+    <div><dt>[[@SELECT]]</dt><dd>Oscillator pages 2 and 3.</dd></div>
+    <div><dt>[[GLO]]</dt><dd>VOICING: mono or poly, and how many notes fit.</dd></div>
+  </dl>
+  <table class="ref tight">
+    <tr><th>OSC page</th><th>KNOB 1</th><th>KNOB 2</th><th>KNOB 3</th><th>KNOB 4</th></tr>
+    <tr><td>1</td><td>WT POS</td><td>WARP</td><td>AMOUNT</td><td>LEVEL</td></tr>
+    <tr><td>2</td><td>VOICES</td><td>DETUNE</td><td>BLEND</td><td>WIDTH</td></tr>
+    <tr><td>3</td><td>OCT</td><td>SEMI</td><td>FINE</td><td>RANGE</td></tr>
+  </table>
+  <ul class="plain">
+    <li><strong>VOICES</strong>: how many unison copies, 1 to 8.</li>
+    <li><strong>DETUNE</strong>: how far apart they're tuned. An INIT slot starts at [[~50%]].</li>
+    <li><strong>BLEND</strong>: the balance between the centre voice and the detuned ones.</li>
+    <li><strong>WIDTH</strong>: how far they spread left and right. It starts fully wide, [[~+100%]].</li>
+    <li><strong>FINE</strong> (page 3): retunes the whole oscillator in tiny steps called <strong>cents</strong>, hundredths of a semitone.</li>
+  </ul>
+
+  <h2><span class="tag">Let's Make Something</span>A wide sky</h2>
+  <p>Headphones are best for this lesson: width is hard to hear on one small speaker.</p>
+  <h3><span class="part">A</span>Unison on oscillator A</h3>
+  <ol class="steps">
+    <li>Turn [[@PRESETS]] to <strong>106</strong>, [[~INIT]]. On HOME, set CUTOFF to <span class="target">about 6 kHz</span>: bright, but not harsh.</li>
+    <li>Press [[EDIT]] until [[~OSC A]] is lit. Turn [[@SELECT]] to page 2.</li>
+    <li>Hold a note. Turn [[@KNOB 1]] (VOICES) from 1 up to [[~3]]. The note instantly blooms into a shimmer, because DETUNE is already at 50%.</li>
+    <li>To hear what detune is doing, turn [[@KNOB 2]] (DETUNE) all the way down. The three copies are now perfectly in tune and just stack up. Turn it slowly back up: the shimmer returns. Too far and it goes seasick; settle at <span class="target">about 30%</span>.</li>
+    <li>WIDTH ([[@KNOB 4]]) is already fully wide. Turn it down to [[~0%]] and back up to [[~+100%]] while holding a note: on headphones the sound moves from the middle of your head to all around it.</li>
+  </ol>
+
+  <h3><span class="part">B</span>Sparkle from oscillator B</h3>
+  <ol class="steps" start="6">
+    <li>Press [[EDIT]] until [[~OSC B]] is lit. On page 1, raise [[@KNOB 4]] (LEVEL) to <span class="target">about 45%</span>. Its wavetable is DEFAULT too, and it plays one voice: leave VOICES at 1.</li>
+    <li>Turn [[@SELECT]] to page 3. Set [[@KNOB 1]] (OCT) to [[~+1]] and [[@KNOB 3]] (FINE) to <span class="target">about +7 ct</span>. The octave adds brightness on top; the few cents of detune make it beat gently against oscillator A, a cheap way to get movement without spending voices.</li>
+  </ol>
+
+  <h3><span class="part">C</span>A floor, and a shape</h3>
+  <ol class="steps" start="8">
+    <li>Press [[EDIT]] until [[~SUB]] is lit and raise SUB to <span class="target">about 35%</span>: a sine an octave below the keys.</li>
+    <li>Press [[ENV]] until [[~ENV 1]] is lit. Set ATTACK to <span class="target">about 40 ms</span> (a soft edge) and RELEASE to <span class="target">about 800 ms</span>.</li>
+  </ol>
+
+  <h3><span class="part">D</span>Play wide chords</h3>
+  <ol class="steps" start="10">
+    <li>Press [[GLO]] until [[~VOICING]] is lit. The display should read [[~POLY, 4 NOTES]].</li>
+    <li>Play four-note chords: try the two lowest C keys with the E and G between them, then move the same shape up the keyboard. Big, warm, wide, and every note sounds.</li>
+    <li>Now see the trade-off for yourself. Go to OSC A page 2 and raise VOICES to [[~5]], then come back to VOICING: it now offers fewer notes. Play the same chord and listen for notes going missing. Put VOICES back to [[~3]].</li>
+  </ol>
+
+  <h3><span class="part">E</span>Save it</h3>
+  <ol class="steps" start="13">
+    <li>Press [[SAVE]] (check [[~SAVE TO 106]] and [[~REPLACES INIT]]), spell [[~WIDE SKY]], set CATEGORY to [[~SYNTH]], and press [[SAVE]] again.</li>
+  </ol>
+
+  <div class="play">
+    <h2><span class="tag">Have a Play</span>Thicker, stranger</h2>
+    <ul>
+      <li>For a single-line lead, push OSC A to VOICES [[~8]] and DETUNE to 35%: the famous &#8220;supersaw&#8221; of trance music. VOICING will show just two notes, so play melodies, not chords. Then try BLEND fully one way, then the other.</li>
+      <li>Set OSC B's OCT to 0 and SEMI to [[~+7]]: a fifth above, a sound that rings like an organ stop.</li>
+      <li>On VOICING page 2, [[@KNOB 2]] (RAND TUN) and [[@KNOB 4]] (RAND VOL) give each new note a tiny random nudge of tuning and volume. A touch makes repeated notes sound hand-played, and costs no voices at all.</li>
+    </ul>
+  </div>
+
+  <div class="wrap"><div class="cols">
+    <div class="learned"><h2>What You've Learned</h2><ul>
+      <li>Unison stacks voices; detune makes them shimmer; width spreads them.</li>
+      <li>Layering combines sources, each with a job.</li>
+      <li>A few cents between oscillators adds beating for free.</li>
+      <li>Voices per note share a pool of 16: thicker means fewer notes.</li>
+    </ul></div>
+    <div class="creation"><h2><span class="tag">Your Creation</span>WIDE SKY</h2>
+      <p>Three detuned voices on A, one sparkling voice an octave up on B, a sine floor, a soft attack. Four-note chords. Category SYNTH.</p>
+      <p><span class="slot">Slot 106</span>. Ideal for chords you'll later sample and chop.</p></div>
+  </div></div>
+</section>

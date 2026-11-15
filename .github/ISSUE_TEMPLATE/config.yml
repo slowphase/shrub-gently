@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: SHRUB firmware bugs, installation and feature requests
+    url: https://shrub.audio/
+    about: Problems with SHRUB itself, installing it or ideas for the firmware belong with its developer (see shrub.audio, the editor's Feedback button, or the Shrub Club Discord), not this handbook.
+  - name: Official SHRUB Operation Guide
+    url: https://shrub.audio/guide/
+    about: Steve Duda's own documentation, for every page and knob the handbook doesn't cover.

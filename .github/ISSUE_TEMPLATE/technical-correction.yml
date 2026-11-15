@@ -1,0 +1,63 @@
+name: Technical correction
+description: Something in the book doesn't match what SHRUB on the FM-1 actually does.
+title: "[Correction] "
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping! A rough description is perfectly fine. You don't need to know the right answer, only that something didn't work as the book said. Wrong buttons, screens that look different, sounds that behave unexpectedly and diagram mistakes are all welcome.
+  - type: input
+    id: where
+    attributes:
+      label: Where in the book?
+      description: Lesson, page and step number.
+      placeholder: "e.g. Lesson 6, page 43, step 10"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of problem is it?
+      options:
+        - "A button, knob or page"
+        - "A value or label on the screen"
+        - "How a sound behaved"
+        - "Saving or loading a patch"
+        - "Arpeggiator, effects or the motion sequencer"
+        - "A diagram or illustration"
+        - "Recording into the MPC"
+        - "Something else"
+  - type: textarea
+    id: book
+    attributes:
+      label: What the book says
+      placeholder: "e.g. The display should read POLY, 4 NOTES"
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What actually happened
+      placeholder: "e.g. It read POLY, 3 NOTES"
+    validations:
+      required: true
+  - type: input
+    id: firmware
+    attributes:
+      label: SHRUB version on your FM-1
+      description: Shown on the GLOBAL page (press GLO until GLOBAL is lit). Leave blank if unsure.
+      placeholder: "e.g. V1.04"
+  - type: dropdown
+    id: hardware
+    attributes:
+      label: Did you try this on a real FM-1?
+      options:
+        - "Yes, on my FM-1"
+        - "On the emulator or editor"
+        - "No, I spotted it while reading"
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Photos of the screen are very welcome.

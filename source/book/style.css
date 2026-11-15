@@ -1,0 +1,231 @@
+/* Shrub, Gently: book styles.
+   Same skeleton as the Gently series (160 x 244 mm, Archivo + Source Serif 4),
+   with its own palette: forest, sage, mint, cream, charcoal and a little lime. */
+
+@font-face { font-family: "Archivo"; font-weight: 400; src: url(fonts/archivo-latin-400-normal.woff2); }
+@font-face { font-family: "Archivo"; font-weight: 500; src: url(fonts/archivo-latin-500-normal.woff2); }
+@font-face { font-family: "Archivo"; font-weight: 600; src: url(fonts/archivo-latin-600-normal.woff2); }
+@font-face { font-family: "Archivo"; font-weight: 700; src: url(fonts/archivo-latin-700-normal.woff2); }
+@font-face { font-family: "Archivo"; font-weight: 800; src: url(fonts/archivo-latin-800-normal.woff2); }
+@font-face { font-family: "Archivo"; font-style: italic; font-weight: 400; src: url(fonts/archivo-latin-400-italic.woff2); }
+@font-face { font-family: "Source Serif 4"; font-weight: 400; src: url(fonts/source-serif-4-latin-400-normal.woff2); }
+@font-face { font-family: "Source Serif 4"; font-weight: 600; src: url(fonts/source-serif-4-latin-600-normal.woff2); }
+@font-face { font-family: "Source Serif 4"; font-weight: 700; src: url(fonts/source-serif-4-latin-700-normal.woff2); }
+@font-face { font-family: "Source Serif 4"; font-style: italic; font-weight: 400; src: url(fonts/source-serif-4-latin-400-italic.woff2); }
+@font-face { font-family: "Plex Mono"; font-weight: 400; src: url(fonts/ibm-plex-mono-latin-400-normal.woff2); }
+@font-face { font-family: "Plex Mono"; font-weight: 500; src: url(fonts/ibm-plex-mono-latin-500-normal.woff2); }
+@font-face { font-family: "Fraunces Black Soft"; src: url(fonts/fraunces-black-soft.ttf); }
+@font-face { font-family: "Jost"; font-weight: 400; src: url(fonts/jost-latin-400-normal.woff2); }
+@font-face { font-family: "Michroma"; src: url(fonts/michroma-latin-400-normal.woff2); }
+
+:root {
+  --forest: #1F3A2B; --moss: #3E6A49; --sage: #9CB898; --mint: #DCE8D4;
+  --paper: #F5F2E6; --cream: #FBF9F1; --ink: #2A2D2A; --grey: #7E877C;
+  --rule: #D2D7C5; --lime: #B3D234; --limedk: #7E9A12; --clay: #B4603F;
+}
+
+@page {
+  size: 160mm 244mm;
+  margin: 15mm 13mm 18mm 13mm;
+  background: var(--paper);
+  @bottom-left { content: string(lesson); font: 600 7.2pt Archivo; letter-spacing: .14em; text-transform: uppercase; color: var(--grey); vertical-align: top; padding-top: 5mm; }
+  @bottom-right { content: counter(page); font: 700 8.5pt Archivo; color: var(--forest); vertical-align: top; padding-top: 4.6mm; }
+}
+@page cover { margin: 0; background: var(--forest); @bottom-left { content: none } @bottom-right { content: none } }
+@page opener { @bottom-left { content: none } }
+@page plain { @bottom-left { content: none } @bottom-right { content: none } }
+
+html { font-family: "Source Serif 4", serif; font-size: 11pt; line-height: 1.43; color: var(--ink); hyphens: manual; }
+body { margin: 0; }
+p { margin: 0 0 2.6mm; orphans: 3; widows: 3; }
+a { color: inherit; text-decoration: none; }
+strong { font-weight: 700; }
+
+h1, h2, h3, h4 { font-family: Archivo, sans-serif; color: var(--ink); break-after: avoid; }
+h2 { bookmark-level: 2; bookmark-label: attr(data-bm); font-size: 15pt; font-weight: 800; margin: 7mm 0 3mm; letter-spacing: -.005em; }
+h2 .tag { font: 700 7pt Archivo; letter-spacing: .2em; color: var(--moss); text-transform: uppercase; display: block; margin-bottom: 1mm; }
+h2.sec { padding-top: 2.5mm; border-top: 1.4pt solid var(--forest); }
+h3 { bookmark-level: none; font-size: 11.6pt; font-weight: 700; margin: 5mm 0 2mm; }
+h3 .part { color: var(--moss); font-weight: 800; margin-right: 1.5mm; }
+h4 { bookmark-level: none; font-size: 8.6pt; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--grey); margin: 4mm 0 1.5mm; }
+
+/* chips: [[BUTTON]], [[@KNOB]], [[~screen text]] */
+.k { font: 700 7.4pt Archivo; letter-spacing: .05em; text-transform: uppercase; border: .7pt solid var(--ink); border-radius: 2pt; padding: .1pt 2.4pt .3pt; background: var(--cream); white-space: nowrap; }
+.kn { font: 700 7.4pt Archivo; letter-spacing: .03em; border: .7pt solid var(--forest); border-radius: 6pt; padding: .1pt 3.4pt .3pt; background: var(--forest); color: var(--cream); white-space: nowrap; }
+.scr { font: 500 8.4pt "Plex Mono"; background: #1F2321; color: #D9EE9A; padding: .2pt 2.4pt .4pt; border-radius: 1.5pt; white-space: nowrap; }
+
+/* cover */
+.cover { page: cover; height: 244mm; position: relative; background: var(--forest); color: var(--cream); overflow: hidden; }
+.cover .coverart { position: absolute; left: 10mm; top: 8mm; width: 140mm; }
+.cover .wordmark { position: absolute; left: 13mm; top: 146mm; font: 400 64pt/1 "Fraunces Black Soft"; white-space: nowrap; }
+.cover .wordmark .a { color: var(--cream); }
+.cover .wordmark .b { color: var(--lime); }
+.cover .tagline { position: absolute; left: 14.4mm; top: 178mm; font: 400 19pt/1.1 Jost; color: var(--mint); }
+.cover .device { position: absolute; left: 14.6mm; top: 192mm; font: 600 7.6pt Archivo; letter-spacing: .2em; text-transform: uppercase; color: var(--lime); }
+.cover .foot { position: absolute; left: 14mm; right: 14mm; bottom: 13mm; font: 600 6.6pt Archivo; letter-spacing: .16em; text-transform: uppercase; color: #9fb59c; display: flex; justify-content: space-between; border-top: .6pt solid #3f5c4a; padding-top: 3mm; }
+
+/* contents */
+.toc { page: plain; }
+.toc h1 { font: 400 20pt Michroma; margin: 0 0 4mm; bookmark-level: 1; color: var(--forest); }
+.toc ol { list-style: none; padding: 0; margin: 0; }
+.toc li { border-bottom: .5pt solid var(--rule); padding: 1.15mm 0; }
+.toc li a { display: flex; width: 100%; align-items: baseline; }
+.toc .n { font: 700 8pt Archivo; color: var(--moss); width: 11mm; letter-spacing: .1em; }
+.toc .t { font: 600 10.6pt Archivo; flex: 1; }
+.toc .t small { display: block; font: italic 400 8.6pt "Source Serif 4"; color: var(--grey); margin-top: .2mm; }
+.toc .p { font: 700 10pt Archivo; color: var(--forest); }
+.toc .p::after { content: target-counter(attr(data-href), page); }
+.toc li.group { border: 0; padding: 2.6mm 0 .4mm; font: 700 7pt Archivo; letter-spacing: .22em; color: var(--grey); text-transform: uppercase; }
+
+/* chapters */
+.chapter { break-before: page; }
+.chapter > h1 { bookmark-level: 1; string-set: lesson attr(data-short); font: 400 18pt Michroma; margin: 0 0 5mm; line-height: 1.2; color: var(--forest); }
+.chapter > .kicker { font: 700 7pt Archivo; letter-spacing: .24em; text-transform: uppercase; color: var(--moss); margin-bottom: 1.5mm; }
+
+/* lesson opener */
+.opener { page: opener; break-before: page; }
+.opener .band { background: var(--forest); color: var(--cream); margin: -15mm -13mm 0; padding: 15mm 13mm 7mm; position: relative; }
+.opener .num { font: 400 46pt Michroma; color: var(--lime); line-height: 1; }
+.opener .lbl { font: 700 7.4pt Archivo; letter-spacing: .26em; text-transform: uppercase; color: var(--sage); margin-bottom: 2mm; }
+.opener h1 { bookmark-level: 1; string-set: lesson attr(data-short); font: 400 19pt Michroma; color: var(--cream); margin: 3mm 0 2mm; line-height: 1.15; }
+.opener .dek { font: italic 400 11.4pt "Source Serif 4"; color: var(--mint); margin: 0; max-width: 100mm; }
+.opener .sprig { position: absolute; right: 10mm; top: 10mm; width: 34mm; }
+.stripes3 { margin: 0 -13mm 5mm; }
+.stripes3 div { height: 1.7mm; margin-bottom: .9mm; }
+.s1 { background: var(--moss); } .s2 { background: var(--sage); } .s3 { background: var(--lime); }
+.meta { display: flex; gap: 3mm; margin: 0 0 4mm; }
+.meta div { flex: 1; border-top: 1.2pt solid var(--forest); padding-top: 1.6mm; font-size: 9.2pt; line-height: 1.32; }
+.meta b { display: block; font: 700 6.8pt Archivo; letter-spacing: .2em; text-transform: uppercase; color: var(--moss); margin-bottom: .8mm; }
+
+/* figures */
+figure { margin: 3mm 0 4mm; break-inside: avoid; }
+figure svg { display: block; width: 100%; }
+figcaption { font: italic 400 8.6pt "Source Serif 4"; color: var(--grey); margin-top: 1.6mm; line-height: 1.32; }
+figure.scrfig { float: right; width: 42mm; margin: 0 0 2mm 4mm; }
+figure.scrfig svg { width: 42mm; border-radius: 1.6mm; }
+figure.scrfig figcaption { font-size: 7.8pt; }
+figure.scrfig.left { float: left; margin: 0 4mm 2mm 0; }
+.clear { clear: both; }
+table.meetgrid { width: 100%; border-collapse: collapse; margin: 2mm 0 3mm; break-inside: avoid; }
+table.meetgrid td { vertical-align: top; padding: 0; }
+td.mfig { width: 54%; padding-right: 4mm !important; }
+figure.panelfig { margin: 0; background: var(--cream); border: .6pt solid var(--rule); border-radius: 2mm; padding: 2.5mm 2.5mm 2mm; }
+figure.panelfig figcaption { font-size: 8pt; line-height: 1.28; }
+.meetlist dl.controls { margin-top: 0; }
+.meetlist dl.controls div { display: block; padding: .7mm 0; border-bottom: .5pt solid var(--rule); }
+.meetlist dl.controls dt { display: inline; margin: 0 1.2mm 0 0; font: 700 9pt Archivo; }
+.meetlist dl.controls dd { display: inline; margin: 0; font-size: 9pt; line-height: 1.26; }
+
+dl.controls { margin: 2mm 0 3mm; }
+dl.controls div { display: flow-root; padding: 1.4mm 0; border-bottom: .5pt solid var(--rule); break-inside: avoid; }
+dl.controls dt { float: left; width: 30mm; margin-right: 2mm; font: 700 9.4pt Archivo; }
+dl.controls dd { margin: 0 0 0 32mm; font-size: 10pt; line-height: 1.36; }
+
+/* steps */
+ol.steps { list-style: none; padding: 0; margin: 2mm 0 3mm; counter-reset: st; }
+ol.steps > li { counter-increment: st; position: relative; padding-left: 9.5mm; margin-bottom: 2.3mm; break-inside: avoid; }
+ol.steps > li::before { content: counter(st); position: absolute; left: 0; top: .2mm; width: 6.4mm; height: 6.4mm; border-radius: 50%; background: var(--forest); color: var(--cream); font: 700 8.4pt Archivo; text-align: center; line-height: 6.4mm; }
+ol.steps > li p { margin: 0 0 1mm; }
+.target { display: inline-block; font: 600 8.4pt Archivo; color: var(--moss); background: var(--mint); border-radius: 2pt; padding: 0 2pt; }
+
+ul.plain { padding-left: 4.5mm; margin: 1mm 0 3mm; }
+ul.plain li { margin-bottom: 1.2mm; }
+ul.plain li::marker { color: var(--moss); }
+
+/* callouts */
+.note, .oops, .why, .honest, .ear { border-radius: 1.6mm; padding: 3mm 4mm 2mm; margin: 3mm 0 4mm; break-inside: avoid; font-size: 10pt; line-height: 1.38; }
+.note { background: var(--cream); border-left: 2.4pt solid var(--lime); }
+.oops { background: #F4E5DC; border-left: 2.4pt solid var(--clay); }
+.why { background: #E7EDE1; border-left: 2.4pt solid var(--moss); }
+.ear { background: var(--mint); border-left: 2.4pt solid var(--forest); }
+.honest { background: transparent; border: .8pt dashed var(--grey); }
+.note b.h, .oops b.h, .why b.h, .honest b.h, .ear b.h { display: block; font: 700 6.9pt Archivo; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 1.2mm; }
+.oops b.h { color: var(--clay); } .note b.h { color: var(--limedk); } .why b.h, .ear b.h { color: var(--moss); } .honest b.h { color: var(--grey); }
+
+/* have a play */
+.play { background: var(--forest); color: var(--cream); border-radius: 2mm; padding: 4mm 5mm 3mm; margin: 5mm 0 4mm; box-decoration-break: clone; }
+.play h2 { color: var(--cream); margin: 0 0 2mm; font-size: 13pt; }
+.play h2 .tag { color: var(--lime); }
+.play ul { margin: 0; padding-left: 4.5mm; font-size: 10pt; }
+.play li { margin-bottom: 1.6mm; break-inside: avoid; }
+.play li::marker { color: var(--lime); }
+.play .k { background: transparent; color: var(--cream); border-color: var(--sage); }
+.play .kn { background: var(--moss); border-color: var(--sage); }
+.play .scr { background: #12201a; }
+
+/* wrap-up */
+.wrap { break-inside: avoid; margin-top: 4mm; }
+.wrap .cols { display: flex; gap: 4mm; }
+.wrap .learned { flex: 1.25; border-top: 1.4pt solid var(--forest); padding-top: 1.5mm; }
+.wrap .learned h2 { margin: 0 0 1.5mm; font-size: 12pt; bookmark-level: none; }
+.wrap .learned ul { margin: 0; padding-left: 4mm; font-size: 9.6pt; line-height: 1.34; }
+.wrap .learned li { margin-bottom: 1mm; }
+.wrap .learned li::marker { color: var(--moss); }
+.wrap .creation { flex: 1; background: var(--mint); color: var(--ink); border-radius: 2mm; padding: 3.5mm 4mm; border-top: 3pt solid var(--lime); }
+.wrap .creation h2 { color: var(--forest); margin: 0 0 1.5mm; font-size: 12pt; bookmark-level: none; }
+.wrap .creation h2 .tag { color: var(--moss); }
+.wrap .creation p { font-size: 9.6pt; line-height: 1.36; margin-bottom: 1.6mm; }
+.wrap .creation .slot { font: 500 8.6pt "Plex Mono"; color: var(--forest); }
+
+/* tables */
+table.ref { width: 100%; border-collapse: collapse; margin: 1mm 0 4mm; font-size: 9.4pt; line-height: 1.3; }
+table.ref th { font: 700 6.8pt Archivo; letter-spacing: .18em; text-transform: uppercase; color: var(--moss); text-align: left; padding: 1.5mm 1mm 1mm; border-bottom: 1.2pt solid var(--forest); }
+table.ref td { padding: 1.4mm 1mm; border-bottom: .5pt solid var(--rule); vertical-align: top; }
+table.ref td:first-child { width: 36%; }
+table.ref tr { break-inside: avoid; }
+table.ref.recipe td:first-child { width: 24%; font: 700 8.8pt Archivo; }
+table.ref.recipe td:nth-child(2) { width: 30%; }
+table.ref.tight td { padding: 1mm 1mm; }
+
+.gloss { columns: 2; column-gap: 6mm; }
+.gloss dt { font: 700 9.6pt Archivo; margin-top: 1.6mm; break-after: avoid; color: var(--forest); }
+.gloss dt:first-child { margin-top: 0; }
+.gloss dd { margin: .4mm 0 0; font-size: 9.3pt; line-height: 1.3; break-before: avoid; }
+
+.tb { margin: 0 0 2.2mm; border-top: .5pt solid var(--rule); padding-top: 1.6mm; }
+.tb .q { font: 700 10.3pt Archivo; margin: 0 0 1.2mm; break-after: avoid; color: var(--forest); }
+.tb dl { margin: 0; }
+.tb dl div { display: flow-root; margin-bottom: .5mm; break-inside: avoid; }
+.tb dt { float: left; width: 19mm; font: 700 6.6pt Archivo; letter-spacing: .16em; text-transform: uppercase; color: var(--moss); padding-top: 1mm; }
+.tb dd { margin-left: 20mm; font-size: 9.4pt; line-height: 1.3; }
+.tb dd ol { margin: 0; padding-left: 4.2mm; }
+.tb dd ol li { margin-bottom: .5mm; }
+
+.closing .big { font: 400 16pt Michroma; line-height: 1.3; margin: 4mm 0; color: var(--forest); }
+.smallprint { font-size: 8.6pt; line-height: 1.35; color: #565d55; }
+.smallprint p { margin-bottom: 1.6mm; }
+.pb { break-before: page; }
+.keep { break-inside: avoid; }
+.two { display: flex; gap: 5mm; }
+.two > div { flex: 1; }
+
+/* --- QA pass 1 --- */
+html { font-size: 10.6pt; line-height: 1.41; }
+h2 { margin: 6mm 0 2.6mm; }
+.meetlist dl.controls dt { float: none; width: auto; }
+.meetlist dl.controls dd { margin: 0 !important; }
+.meetlist dl.controls div { display: block; }
+table.ref.tight { break-inside: avoid; }
+.keep { break-inside: avoid; }
+figure.diagram svg { max-height: 92mm; }
+.wrap { margin-top: 3mm; }
+.play { margin: 4mm 0 3mm; padding: 3.4mm 4.6mm 2.4mm; }
+.play li { margin-bottom: 1.2mm; }
+ol.steps > li { margin-bottom: 2mm; }
+.cover .device { right: 14mm; letter-spacing: .14em; line-height: 1.5; }
+.wrap .learned h2, .wrap .creation h2 { font-size: 11pt; margin-bottom: 1mm; }
+.wrap .learned ul { font-size: 8.9pt; line-height: 1.27; }
+.wrap .learned li { margin-bottom: .6mm; }
+.wrap .creation { padding: 2.8mm 3.4mm; }
+.wrap .creation p { font-size: 8.9pt; line-height: 1.3; margin-bottom: 1.2mm; }
+.endpage { page: cover; break-before: page; height: 244mm; position: relative; background: var(--forest); color: var(--cream); overflow: hidden; }
+.endpage .coverart { position: absolute; left: 35mm; top: 20mm; width: 90mm; opacity: .9; }
+.endpage .big { position: absolute; left: 16mm; right: 16mm; top: 128mm; font: 400 15pt/1.35 Michroma; color: var(--cream); }
+.endpage .small { position: absolute; left: 16mm; right: 16mm; top: 178mm; font: italic 400 11pt "Source Serif 4"; color: var(--mint); }
+.endpage .foot { position: absolute; left: 14mm; right: 14mm; bottom: 13mm; font: 600 6.6pt Archivo; letter-spacing: .16em; text-transform: uppercase; color: #9fb59c; display: flex; justify-content: space-between; border-top: .6pt solid #3f5c4a; padding-top: 3mm; }
+
+/* v0.9.1: table layout for the wrap-up (WeasyPrint paginates it more reliably than flex) */
+.wrap .cols { display: table; width: 100%; border-collapse: separate; border-spacing: 0; table-layout: fixed; }
+.wrap .learned { display: table-cell; width: 56%; vertical-align: top; padding-right: 4mm; border-top: 0; padding-top: 0; }
+.wrap .learned h2 { border-top: 1.4pt solid var(--forest); padding-top: 1.5mm; }
+.wrap .creation { display: table-cell; width: 44%; vertical-align: top; }

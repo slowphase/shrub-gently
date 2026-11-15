@@ -1,0 +1,212 @@
+<section class="opener" id="l3">
+  <div class="band">
+    <!--SPRIG:3-->
+    <div class="lbl">Lesson</div>
+    <div class="num">03</div>
+    <h1 data-short="Lesson 3 &#183; Give It a Life">Give It a Life</h1>
+    <p class="dek">Every sound is born, lives and fades. Shape that life and a plain tone becomes a soft, plucked note.</p>
+  </div>
+  <div class="stripes3"><div class="s1"></div><div class="s2"></div><div class="s3"></div></div>
+  <div class="meta"><div><b>Time</b>About 35 minutes</div><div><b>Starts from</b>An empty slot, [[~103 INIT]]</div><div><b>Outcome</b>[[~SOFT PLUCK]], a gentle plucked sound, in slot 103</div></div>
+
+  <h2><span class="tag">The Idea</span>The life of a note</h2>
+  <p>Pluck a guitar string and listen closely. The sound jumps in instantly, rings, and fades away even while your finger stays put. Bow a violin and the sound swells in gently and stays as long as the bow moves. Same notes, different <em>lives</em>. That life, how loudness changes over time, is a huge part of what makes an instrument recognisable.</p>
+  <p>A synth shapes it with an <strong>envelope</strong>: think of it as an invisible hand on the volume knob that moves the same way every time you press a key. Shrub's envelopes have four main stages, known by their initials, <strong>ADSR</strong>:</p>
+  <!--FIG:adsr|The four stages. Attack, decay and sustain happen while you hold the key; release begins when you let go.-->
+  <dl class="controls">
+    <div><dt>ATTACK</dt><dd>How long the sound takes to reach full volume after you press a key. Short is a click or pluck; long is a swell.</dd></div>
+    <div><dt>DECAY</dt><dd>How long it then takes to fall to the sustain level.</dd></div>
+    <div><dt>SUSTAIN</dt><dd>A <em>level</em>, not a time: how loud the note stays while you keep holding the key. Shrub shows it in decibels. [[~0.0 dB]] is full volume; fully down is [[~-inf dB]], silence.</dd></div>
+    <div><dt>RELEASE</dt><dd>How long the sound takes to fade after you let go.</dd></div>
+  </dl>
+  <p>Just four knobs, but they cover an enormous range of characters:</p>
+  <!--FIG:adsr_shapes|Four familiar envelope shapes. Tonight you'll build the first.-->
+  <p>Shrub has three envelopes. <strong>ENV 1</strong> is permanently connected to volume, and every note gets its own copy, so each note you play has its own life. ENV 2 and ENV 3 are spares you can connect to other things; you'll use ENV 2 in Lesson 4.</p>
+
+  <h2><span class="tag">Meet the Controls</span>The envelope pages</h2>
+  <!--PANEL:l3|ENV opens the envelopes; the four screen knobs are the four stages.-->
+  <dl class="controls">
+    <div><dt>[[ENV]]</dt><dd>Opens ENV 1. Press again for ENV 2, ENV 3, then the MATRIX.</dd></div>
+    <div><dt>[[@KNOB 1]]&#8211;[[@KNOB 4]]</dt><dd>Page 1: ATTACK, DECAY, SUSTAIN, RELEASE.</dd></div>
+    <div><dt>[[@SELECT]]</dt><dd>Page 2: HOLD, and the curve of each stage.</dd></div>
+    <div><dt>[[@PRESETS]] [[SAVE]]</dt><dd>As in Lesson 1.</dd></div>
+  </dl>
+  <!--SCR:env_init|ENV 1 on an INIT slot: a near-instant attack, full sustain and a very short release. Play a note and a dot rides along the shape.-->
+  <p>The display draws the envelope's shape, and a small dot travels along it while a note plays, so you can see the stages happening. On an INIT slot, ENV 1 starts at [[~0.5 ms]] attack, [[~1.00 s]] decay, [[~0.0 dB]] sustain and [[~15 ms]] release.</p>
+  <p>Notice what that means: with sustain at full volume, the decay has nowhere to fall to. The note simply switches on and off, like an organ. You'll change that tonight.</p>
+  <div class="clear"></div>
+
+  <h2><span class="tag">Let's Make Something</span>A soft pluck</h2>
+  <h3><span class="part">A</span>Start clean</h3>
+  <ol class="steps">
+    <li>Turn [[@PRESETS]] to <strong>103</strong>, [[~INIT]].</li>
+    <li>Press [[ENV]] until [[~ENV 1]] is lit. Turn [[@SELECT]] anticlockwise to page 1.</li>
+    <li>Hold a key for a couple of seconds, then let go. Watch the dot: it shoots up, stays at the top while you hold, and drops the instant you release. Organ-like.</li>
+  </ol>
+
+  <h3><span class="part">B</span>Hear each stage on its own</h3>
+  <ol class="steps" start="4">
+    <li><strong>Attack.</strong> Turn [[@KNOB 1]] (ATTACK) up to <span class="target">about 1 s</span>. Hold a key: the sound now swells in. Turn it back down to the minimum, [[~0.5 ms]].</li>
+    <li><strong>Release.</strong> Turn [[@KNOB 4]] (RELEASE) up to <span class="target">about 2 s</span>. Play short notes: each one lingers and fades after you let go. Lovely for pads, but blurry for fast playing.</li>
+    <li><strong>Sustain.</strong> Turn [[@KNOB 3]] (SUSTAIN) all the way anticlockwise, to [[~-inf dB]]. Now hold a key. The note fades by itself over about a second, even though you're still holding. That's the decay at work, falling all the way to silence.</li>
+  </ol>
+  <div class="ear"><b class="h">Listen for</b>With sustain at silence, holding a key longer than the decay changes nothing: the note has already finished its life on its own. That's what makes a pluck, and plucked strings, struck bells and drums all behave like this. Letting go <em>early</em> still matters, though: the release takes over from wherever the note has reached, so a quick tap sounds shorter than a held note. You'll set that release next.</div>
+
+  <h3><span class="part">C</span>Shape the pluck</h3>
+  <!--SCR:env_pluck|A pluck: instant attack, short decay, no sustain, and a gentle release.-->
+  <ol class="steps" start="7">
+    <li>Turn [[@KNOB 2]] (DECAY) down to <span class="target">about 350 ms</span> (anything from 300 to 450 is fine). Play a few notes: short, plucky, bouncing.</li>
+    <li>Set [[@KNOB 4]] (RELEASE) to <span class="target">about 250 ms</span>. Notes you let go of early now fade instead of stopping dead, which sounds more natural.</li>
+    <li>Play a slow melody, then a fast one. Adjust DECAY until it feels right: longer for a ringing harp, shorter for a muted, woody tap.</li>
+  </ol>
+  <div class="clear"></div>
+
+  <h3><span class="part">D</span>Soften the tone</h3>
+  <p>A raw saw is bright for a gentle pluck. Two skills from earlier lessons will soften it.</p>
+  <ol class="steps" start="10">
+    <li>Press [[HOME]]. Turn [[@KNOB 1]] (CUTOFF) anticlockwise to <span class="target">about 1.2 kHz</span>. The pluck becomes rounder, more like felt than wire.</li>
+    <li>Press [[EDIT]] until [[~SUB]] is lit, and raise [[@KNOB 3]] (SUB) to <span class="target">about 30%</span> for a little body underneath. Notice that the sub plucks too: ENV 1 shapes every source together.</li>
+  </ol>
+
+  <h3><span class="part">E</span>Save it</h3>
+  <ol class="steps" start="12">
+    <li>Press [[SAVE]]. Check [[~SAVE TO 103]].</li>
+    <li>Spell [[~SOFT PLUCK]], set CATEGORY to [[~PLUCK]], and press [[SAVE]] again.</li>
+  </ol>
+
+  <div class="play">
+    <h2><span class="tag">Have a Play</span>Other lives</h2>
+    <ul>
+      <li><strong>A swell:</strong> ATTACK about 1.5 s, SUSTAIN back up to [[~0.0 dB]], RELEASE about 2 s. Hold chords. The same oscillator is now a pad.</li>
+      <li><strong>An organ:</strong> everything short, SUSTAIN at [[~0.0 dB]]. Notes on and off, nothing else.</li>
+      <li>On page 2 ([[@SELECT]]), [[@KNOB 3]] (D CURVE) bends the decay. Push it one way and the pluck snaps; the other way, it glows a little longer before fading.</li>
+      <li>Try the pluck through the [[~NICE PLUGGER]] wavetable on OSC A ([[EDIT]] until [[~OSC A]], then [[@ALGORITHM]]).</li>
+      <li>Remember: none of this changes slot 103 until you save.</li>
+    </ul>
+  </div>
+
+  <div class="wrap"><div class="cols">
+    <div class="learned"><h2>What You've Learned</h2><ul>
+      <li>An envelope shapes a sound over time: attack, decay, sustain, release.</li>
+      <li>Sustain is a level; the other three are times.</li>
+      <li>No sustain plus a short decay makes a pluck.</li>
+      <li>ENV 1 is each note's volume; [[ENV]] steps through ENV 1, 2, 3 and the matrix.</li>
+    </ul></div>
+    <div class="creation"><h2><span class="tag">Your Creation</span>SOFT PLUCK</h2>
+      <p>A saw with a short decay, no sustain, a soft release, a darker filter and a touch of sub. Category PLUCK.</p>
+      <p><span class="slot">Slot 103</span>. You'll give it echoes in Lesson 7.</p></div>
+  </div></div>
+</section>
+
+<section class="opener" id="l4">
+  <div class="band">
+    <!--SPRIG:4-->
+    <div class="lbl">Lesson</div>
+    <div class="num">04</div>
+    <h1 data-short="Lesson 4 &#183; Dark and Bright">Dark and Bright</h1>
+    <p class="dek">Start with something bright, then carve it into shape. Filters, resonance, and a warm, deep bass.</p>
+  </div>
+  <div class="stripes3"><div class="s1"></div><div class="s2"></div><div class="s3"></div></div>
+  <div class="meta"><div><b>Time</b>About 45 minutes</div><div><b>Starts from</b>An empty slot, [[~104 INIT]]</div><div><b>Outcome</b>[[~DEEP BASS]], a round bass with a soft attack bloom, in slot 104</div></div>
+
+  <h2><span class="tag">The Idea</span>Sculpting by taking away</h2>
+  <p>A sculptor starts with a block and removes everything that isn't the statue. Much of synthesis works the same way: start with a wave full of harmonics, like a saw, then remove some of them. This is called <strong>subtractive synthesis</strong>, and the tool that removes harmonics is a <strong>filter</strong>.</p>
+  <p>The most common filter is the <strong>low-pass</strong>. It lets the low harmonics pass through and removes the high ones. The point where it starts removing is called the <strong>cutoff</strong>. Turn the cutoff down and fewer harmonics get through: the sound turns darker, softer, more muffled. Turn it up and the brightness returns.</p>
+  <!--FIG:filter_lp|A low-pass filter. Harmonics below the cutoff pass through; those above are faded out. The pale bars are what's been removed.-->
+  <p><strong>Resonance</strong> boosts the harmonics right at the cutoff, so the filter itself starts to sing. A little gives a sound edge and presence. A lot makes it whistle and squelch, especially as the cutoff moves.</p>
+  <p>A <strong>high-pass</strong> filter does the opposite: it removes the lows and keeps the highs. It's for thinning things out, like the tinny sound of a phone speaker.</p>
+  <!--FIG:filter_hp|A high-pass filter. Useful for airy, thin sounds; not for tonight's bass.-->
+
+  <h3>Movement inside every note</h3>
+  <p>A filter that stays still sounds fine. A filter that <em>moves</em> sounds alive. Shrub wires its second envelope, <strong>ENV 2</strong>, straight to the filter. Give ENV 2 a short decay and each note will start bright and settle darker, a little &#8220;bwow&#8221; that makes basses feel physical.</p>
+  <p>One Shrub detail matters here. Unlike ENV 1, there is only <strong>one ENV 2, shared by every note</strong>, just as there's one filter. A new note restarts it from wherever it is, and it releases only when the last key comes up. On a single line of notes, like tonight's bass, that's exactly what you want. On a held chord, the whole chord gets one sweep together, not one per note.</p>
+  <!--FIG:env2_sweep|ENV 2 pushes the cutoff up at the start of each note, then lets it fall back to where the CUTOFF knob is set.-->
+
+  <h2><span class="tag">Meet the Controls</span>The filter's three pages</h2>
+  <!--PANEL:l4|The FILTER is the last part of EDIT. ENV 2 lives under ENV, and VOICING under GLO.-->
+  <dl class="controls">
+    <div><dt>[[EDIT]]</dt><dd>Press until [[~FILTER]] is lit.</dd></div>
+    <div><dt>[[@ALGORITHM]]</dt><dd>The filter type. There are 76.</dd></div>
+    <div><dt>[[@SELECT]]</dt><dd>Turns between the filter's three pages.</dd></div>
+    <div><dt>[[ENV]]</dt><dd>Press until [[~ENV 2]] is lit for the filter's envelope.</dd></div>
+    <div><dt>[[GLO]]</dt><dd>Opens VOICING, where a sound can become MONO.</dd></div>
+  </dl>
+  <table class="ref tight">
+    <tr><th>Filter page</th><th>KNOB 1</th><th>KNOB 2</th><th>KNOB 3</th><th>KNOB 4</th></tr>
+    <tr><td>1</td><td>CUTOFF</td><td>RES</td><td>DRIVE</td><td>MIX</td></tr>
+    <tr><td>2</td><td>FAT</td><td>KEY TRK</td><td>ENV 2</td><td>STEREO</td></tr>
+    <tr><td>3</td><td>OSC A</td><td>OSC B</td><td>NOISE</td><td>SUB</td></tr>
+  </table>
+  <p>Page 1 is the main event. <strong>DRIVE</strong> pushes the sound into the filter harder, for warmth and grit. Page 2's <strong>ENV 2</strong> sets how far ENV 2 moves the cutoff. Page 3 chooses which sources go through the filter at all: anything switched off skips it. The CUTOFF and RES knobs on HOME are the same two controls, kept handy.</p>
+
+  <h2><span class="tag">Let's Make Something</span>A deep bass</h2>
+  <h3><span class="part">A</span>Hear the filter</h3>
+  <ol class="steps">
+    <li>Turn [[@PRESETS]] to <strong>104</strong>, [[~INIT]].</li>
+    <li>Press [[EDIT]] until [[~FILTER]] is lit, and turn [[@SELECT]] to page 1. The type shows [[~LP 24]]: a low-pass filter.</li>
+    <li>Hold a low note. Turn [[@KNOB 1]] (CUTOFF) slowly all the way down, then all the way up. It runs from about 8 Hz, where almost nothing gets through, to [[~22.1 kHz]], wide open. Watch the curve on the screen follow you.</li>
+    <li>Turn [[@KNOB 2]] (RES) up to <span class="target">about 60%</span> and sweep CUTOFF again. Hear it whistle? Then bring RES back to <span class="target">about 30%</span>.</li>
+  </ol>
+  <div class="clear"></div>
+
+  <h3><span class="part">B</span>Build the body</h3>
+  <ol class="steps" start="5">
+    <li>Press [[EDIT]] until [[~OSC A]] is lit. Turn [[@SELECT]] to page 3 and set [[@KNOB 1]] (OCT) to [[~-1]]. The saw drops an octave.</li>
+    <li>Press [[EDIT]] until [[~SUB]] is lit. Raise [[@KNOB 3]] (SUB) to <span class="target">about 50%</span>. The sub is a sine set an octave below the keys, the same octave as the saw you just lowered. So it doesn't add a new, deeper note: it doubles the saw's lowest harmonic, the <strong>fundamental</strong>, making the bass round and heavy.</li>
+  </ol>
+
+  <h3><span class="part">C</span>Set the filter</h3>
+  <!--SCR:filter_bass|Filter page 1, dark and warm. The curve shows the cutoff sitting low.-->
+  <ol class="steps" start="7">
+    <li>Press [[EDIT]] until [[~FILTER]] is lit, page 1.</li>
+    <li>Set [[@KNOB 1]] (CUTOFF) to <span class="target">about 250 Hz</span>. Dark and round.</li>
+    <li>Set [[@KNOB 3]] (DRIVE) to <span class="target">about 20%</span> for a little warmth.</li>
+    <li>Turn [[@SELECT]] to page 3. Turn [[@KNOB 4]] (SUB) to [[~OFF]]. The sub now skips the filter, so the deep end stays solid whatever the filter does. A trick straight from the Operation Guide.</li>
+  </ol>
+  <div class="clear"></div>
+
+  <h3><span class="part">D</span>Make it bloom</h3>
+  <!--SCR:filter_p2|Filter page 2. ENV 2 sets how far the envelope pushes the cutoff.-->
+  <ol class="steps" start="11">
+    <li>Turn [[@SELECT]] to page 2. Turn [[@KNOB 3]] (ENV 2) clockwise to <span class="target">about 40%</span>. Nothing much happens yet, because ENV 2 is still shaped like an organ.</li>
+    <li>Press [[ENV]] until [[~ENV 2]] is lit, page 1.</li>
+    <li>Turn [[@KNOB 3]] (SUSTAIN) all the way down to [[~-inf dB]], and [[@KNOB 2]] (DECAY) to <span class="target">about 300 ms</span>.</li>
+    <li>Play short low notes, one at a time. Each one opens with a soft &#8220;bwow&#8221; and settles into a round tone. That's ENV 2 sweeping the cutoff, exactly as in the diagram. (Hold one note and play another over it, and the second note won't bloom as much: the shared ENV 2 restarts from where it already was. Step 16 makes the bass play one note at a time.)</li>
+    <li>Go back to the filter's page 2 ([[EDIT]] until [[~FILTER]], [[@SELECT]] to page 2) and adjust ENV 2 to taste. Less for subtle, more for funky.</li>
+  </ol>
+  <div class="why"><b class="h">Why the bloom matters</b>Real instruments are brighter at the start of a note, and the ear uses that brightness to hear where each note begins. Without it, a dark bass can feel smudged.</div>
+  <div class="clear"></div>
+
+  <h3><span class="part">E</span>One note at a time</h3>
+  <ol class="steps" start="16">
+    <li>Press [[GLO]] until [[~VOICING]] is lit. [[@KNOB 1]] reads [[~POLY]]. Turn it to [[~MONO]]. Now only one note plays at a time, like a real bass player, and a new note takes over from the last.</li>
+    <li>For a gentle slide between notes, turn [[@KNOB 3]] (GLIDE) up to <span class="target">about 40 ms</span>. Play two notes overlapping and hear the pitch glide.</li>
+  </ol>
+
+  <h3><span class="part">F</span>Save it</h3>
+  <ol class="steps" start="18">
+    <li>Press [[SAVE]] (check [[~SAVE TO 104]]), spell [[~DEEP BASS]], set CATEGORY to [[~BASS]], and press [[SAVE]] again.</li>
+  </ol>
+
+  <div class="play">
+    <h2><span class="tag">Have a Play</span>Filter flavours</h2>
+    <ul>
+      <li>On the filter's page 1, turn [[@ALGORITHM]] slowly and watch the type's name. Types starting with HP are high-pass; BP keeps only a band in the middle. [[~MG LADDER]], [[~MG DIRTY]] and [[~ACID LADDER]] imitate classic analogue filters. Come back to [[~LP 24]] if you get lost.</li>
+      <li>Raise RES to about 70% with ENV 2 at 60% for instant squelch, or push DRIVE past 60% for growl.</li>
+      <li>Play a chord on [[~MY CHILL PAD]] while sweeping CUTOFF on HOME. All the notes darken together: that's Shrub's one shared filter.</li>
+    </ul>
+  </div>
+
+  <div class="wrap"><div class="cols">
+    <div class="learned"><h2>What You've Learned</h2><ul>
+      <li>A filter removes harmonics. Low-pass: darker. High-pass: thinner.</li>
+      <li>Cutoff sets where; resonance adds a peak at the cutoff.</li>
+      <li>ENV 2 moves the cutoff; in Shrub it's shared by all notes.</li>
+      <li>Sources can skip the filter (page 3).</li>
+      <li>MONO and GLIDE make a sound play like a single line.</li>
+    </ul></div>
+    <div class="creation"><h2><span class="tag">Your Creation</span>DEEP BASS</h2>
+      <p>A saw an octave down through a low, warm filter that blooms on each note, a sine sub doubling its fundamental, mono with a short glide. Category BASS.</p>
+      <p><span class="slot">Slot 104</span>.</p></div>
+  </div></div>
+</section>
