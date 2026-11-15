@@ -33,16 +33,24 @@ The manuscript uses short tokens that the build turns into the small labels you 
 
 ## Building
 
-You'll need Python 3 with `weasyprint` (version 70 was used; it also installs `fontTools`, which the figures use to measure text).
+The layout is tuned for one renderer: **WeasyPrint 70.0**. Other versions can produce a PDF with the right page count but missing drawings or text (a WeasyPrint 68 build of v0.9.1 lost all its screen illustrations), so the exact versions are pinned in `book/requirements.txt` and `build.py` refuses to run on anything but WeasyPrint 70.x.
+
+**Tested with:** Python 3.13 on Linux, WeasyPrint 70.0, pydyf 0.13.0, tinycss2 1.5.1, tinyhtml5 2.1.0, cssselect2 0.10.1, fontTools 4.67.0, Pillow 12.3.0, Pyphen 0.18.1, cffi 2.1.1, pycparser 3.0, Brotli 1.2.1, zopfli 0.4.3, webencodings 0.6.1. WeasyPrint also needs the Pango library from your operating system ([WeasyPrint's install guide](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html) explains how for macOS, Windows and Linux).
 
 ```
 cd source/book
-pip install weasyprint
-python3 build.py                 # writes Shrub-Gently.pdf
-python3 build.py other-name.pdf  # or choose the output name
+python3 -m venv .venv                 # a clean environment, so other installs can't interfere
+source .venv/bin/activate             # Windows: .venv\Scripts\activate
+pip install -r requirements.txt       # exact versions
+python3 build.py                      # writes Shrub-Gently.pdf
+python3 build.py other-name.pdf       # or choose the output name
 ```
 
-A full build takes under a minute. Afterwards, `pdffonts Shrub-Gently.pdf` should list only the bundled typefaces. Anything else (Inter, DejaVu, a bold Plex Mono) means a character or weight the bundled fonts don't cover; the arrow glyph (→) and the non-breaking hyphen are known gaps, so draw arrows in `figures.py` instead.
+The build prints the page count and WeasyPrint version (`pages: 68 | WeasyPrint 70.0`) and takes under a minute.
+
+**Check the result, not just the page count.** Open the PDF and look at a page with a small screen illustration (page 13 or 47); then run `pdffonts Shrub-Gently.pdf`, which should list only the bundled typefaces. Anything else (Inter, DejaVu, a bold Plex Mono) means a character or weight the bundled fonts don't cover; the arrow glyph (→) and the non-breaking hyphen are known gaps, so draw arrows in `figures.py` instead.
+
+Avoid SVG `clipPath`, masks and filters in `figures.py`: they render differently between WeasyPrint versions.
 
 ## Rules the build keeps
 

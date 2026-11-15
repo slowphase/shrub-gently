@@ -84,7 +84,7 @@
 
   <h3><span class="part">F</span>Stop, and bring it back</h3>
   <ol class="steps" start="17">
-    <li>To stop the latched pattern, turn [[@PRESETS]] to another sound. The arp belongs to ECHO STEPS, so it stops when another preset loads. ([[PLAY]] won't stop it: the arp doesn't run on the transport.)</li>
+    <li>To stop the latched pattern, turn [[@PRESETS]] to another sound. The arp belongs to ECHO STEPS, so with ARP+SCALE on [[~PRESET]] (as it starts) it stops when another preset loads. Pressing [[ARP]] on the arp page to switch it off works too. ([[PLAY]] won't stop it: the arp doesn't run on the transport.)</li>
     <li>Turn back to <strong>107</strong> and hold three keys. The arp springs back exactly as you saved it. On HOME, the [[~ARP]] chip at the top right is lit: a quick sign that a preset has its arp switched on.</li>
   </ol>
   <p>Your original [[~SOFT PLUCK]] is still waiting, untouched, in slot 103.</p>
@@ -96,7 +96,7 @@
       <li><strong>Lock to a scale.</strong> Press [[SCL]]. Turn [[@KNOB 1]] (KEY) to [[~A]] and [[@KNOB 2]] (SCALE) to [[~Minor]]. The keys light up to show the notes of A minor, and any key you press, black or white, is nudged to the nearest one. That doesn't make every combination pretty, but it keeps you inside one family of notes, which is a lovely way to explore. Set KEY to [[~--]] to switch it off.</li>
       <li>In SCL, [[@KNOB 3]] (CHORD) turns each key into a whole chord. Combine it with the arp.</li>
       <li>Try other arp patterns: [[~CONVERGE]], [[~RANDOM]], [[~PINKY UP]]. On page 1, [[@KNOB 4]] (CHANCE) makes some steps skip.</li>
-      <li><strong>Record a knob move.</strong> With the arp latched, press [[REC]] (it starts the transport), go to HOME and turn CUTOFF slowly down and up over a few seconds, then stop turning and press [[REC]] again. Shrub's <strong>motion sequencer</strong> loops your movement in a <strong>lane</strong>, and the [[SEQ]] light comes on. To remove it, press [[SEQ]], turn [[@SELECT]] to the lane holding your movement, turn [[@KNOB 1]] (POINT) to [[~CLEAR LANE]] and press [[SEQ]]. ([[~CLEAR ALL]] also works, but it wipes <em>every</em> lane in the sound you're working on, and asks you to press [[SEQ]] again to confirm.) Loading a preset without lanes doesn't clear them, so do this before moving on.</li>
+      <li><strong>Record a knob move.</strong> With the arp latched, press [[REC]] (it starts the transport), go to HOME and turn CUTOFF slowly down and up over a few seconds, then stop turning and press [[REC]] again. Shrub's <strong>motion sequencer</strong> loops your movement in a <strong>lane</strong>, and the [[SEQ]] light comes on. To remove it, press [[SEQ]], turn [[@SELECT]] to the lane holding your movement, turn [[@KNOB 1]] (POINT) to [[~CLEAR LANE]] and press [[SEQ]]. ([[~CLEAR ALL]] also works, but it wipes <em>every</em> lane in the sound you're working on, and asks you to press [[SEQ]] again to confirm.) Unlike the arp, lanes keep playing when you load a preset that has none of its own; [[PLAY]] stops them, and CLEAR LANE removes them, so do this before moving on.</li>
     </ul>
   </div>
 
@@ -205,7 +205,8 @@
     <li>Visit each of your ten slots, 101 to 110, with [[@PRESETS]]. Play each one for a moment. Does its name still describe it? Is its category right?</li>
     <li>To rename or re-categorise a sound: load it, press [[SAVE]] (it opens on its own slot), change the name or CATEGORY, and press [[SAVE]] again.</li>
     <li>Hold [[HOME]] on each of your sounds to star it as a favourite. If a title already shows a star, leave it: holding again would remove it.</li>
-    <li>Press [[HOME]] and turn [[@ALGORITHM]] until you reach [[~FAVORITES]]. Now [[@PRESETS]] steps through only your starred sounds: your own instrument, ready to play.</li>
+    <li>Optional: if you starred factory presets earlier (such as <strong>042 PAD CHILL HAWK</strong> in Lesson 1), they're still favourites. To make FAVORITES hold only your own bank, load each one and hold [[HOME]] again to remove its star. Removing a star changes nothing else: the sound stays exactly where it was.</li>
+    <li>Press [[HOME]] and turn [[@ALGORITHM]] until you reach [[~FAVORITES]]. Now [[@PRESETS]] steps through only your starred sounds: your own instrument, ready to play. Favourites are entirely optional; skip them and your bank is just as safe in slots 101 to 110.</li>
   </ol>
   <div class="note"><b class="h">A copy for safekeeping (optional, needs a computer)</b>Shrub's browser editor at <strong>shrub.audio/editor</strong> can back up everything on your FM-1. In Chrome or Edge, connect the FM-1 with USB, press <strong>Connect FM-1</strong>, open the <strong>LIBRARY</strong> tab and use <strong>Get from FM-1</strong>, then save the bank to your computer from the Bank menu. The file (a <strong>.shrubbank</strong>) holds all 128 slots, their wavetables and your MIDI map, so it's a complete copy of your sounds.</div>
 
@@ -213,7 +214,7 @@
   <p>Your sounds can leave the FM-1 and become samples you chop, pitch and sequence on the MPC. If you've worked through <em>MPC, Gently</em>, this is its Lesson 6 recording method with a cable instead of the microphone.</p>
   <!--FIG:mpc_hookup|The FM-1's AUDIO OUT into the MPC's two AUDIO IN sockets.-->
   <ol class="steps">
-    <li>Turn the FM-1's [[@MASTER]] down. You need a cable with a <strong>3.5 mm TRS stereo plug</strong> at one end and <strong>two 6.35 mm (1/4 inch) TS mono plugs</strong> at the other, usually sold as a &#8220;3.5 mm to dual 1/4 inch&#8221; or &#8220;insert&#8221; cable. Plug the 3.5 mm end into the FM-1's <strong>AUDIO OUT</strong>. On the MPC Sample's back, plug the left plug (marked L, often white or black) into <strong>AUDIO IN 1/L</strong> and the right plug (marked R, usually red) into <strong>AUDIO IN 2/R</strong>.</li>
+    <li>Turn the FM-1's [[@MASTER]] down. You need a <strong>3.5 mm TRS stereo to dual 6.35 mm TS mono breakout cable</strong>: one small stereo plug at one end, two larger 1/4 inch mono plugs at the other. Plug the 3.5 mm stereo plug into the FM-1's <strong>AUDIO OUT</strong>. On the MPC Sample's back, plug the left mono plug (marked L, often white or black) into <strong>AUDIO IN 1/L</strong> and the right mono plug (marked R, usually red) into <strong>AUDIO IN 2/R</strong>.</li>
     <li>On the MPC, press [[SAMPLE]] and choose an empty bank with [[PAD BANK]].</li>
     <li>Press [[SAMPLE RECORD]]. Set [[@K1]] (Source) to [[~Rear]], which records both AUDIO IN sockets in stereo; [[@K2]] to [[~Free]]; and [[@K3]] (Threshold) all the way down. Press [[B1]] until Monitor reads [[~Auto]].</li>
     <li>On the FM-1, load [[~WIDE SKY]] and play a chord, bringing [[@MASTER]] up until you hear it through the MPC. Watch the MPC's meters: aim for strong but never red. If they light red, turn the FM-1's MASTER down, or the <strong>REC GAIN</strong> knob on the MPC's back; if they barely move, turn up. Set it by eye and ear: there's no single right number.</li>

@@ -5,3 +5,4 @@ source/book/book.html
 __pycache__/
 *.pyc
 .DS_Store
+.venv/

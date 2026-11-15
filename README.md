@@ -24,7 +24,18 @@ No prior musical knowledge required.
 
 There is one edition, sized for comfortable reading on an iPad mini without zooming. The same source is also in the [`source/`](source/) folder.
 
-**Handbook:** v0.9.1 Preview · **Firmware documented:** SHRUB V1.04 · **Status:** checked against the official Operation Guide and emulator; hardware testing pending
+**Rebuilding the PDF** needs WeasyPrint 70.0 exactly; the pinned versions are in [`source/book/requirements.txt`](source/book/requirements.txt):
+
+```
+cd source/book
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+python3 build.py
+```
+
+Full instructions are in [`source/README.md`](source/README.md#building).
+
+**Handbook:** v0.9.2 Preview · **Firmware documented:** SHRUB V1.04 · **Status:** checked against the official Operation Guide and emulator; hardware testing pending
 
 Future versions will appear on the [Releases page](https://github.com/slowphase/shrub-gently/releases).
 
@@ -91,11 +102,11 @@ Please install and update SHRUB using the official instructions on shrub.audio, 
 
 ## Version compatibility
 
-The handbook has its own version number, separate from the firmware it describes. "v0.9.1" is the version of this book; "V1.04" is the SHRUB firmware it was written for.
+The handbook has its own version number, separate from the firmware it describes. "v0.9.2" is the version of this book; "V1.04" is the SHRUB firmware it was written for.
 
 | | Status |
 | --- | --- |
-| Handbook | v0.9.1 Preview |
+| Handbook | v0.9.2 Preview |
 | Documented firmware | SHRUB V1.04 |
 | Reference documentation | *SHRUB Operation Guide* v1.0 (November 2026) |
 | Hardware testing | Pending |
@@ -106,7 +117,7 @@ These behaviours still need confirming on a real FM-1:
 - How many notes the VOICING page shows for the book's patches. The guide says up to four notes; the emulator showed up to eight on a plain sound.
 - Whether EDIT always opens OSC A, or reopens the part you visited last.
 - That an LFO with BIPOLAR off pushes its destination only one way.
-- That a saved, latched arpeggio recalls exactly, and that changing preset (not PLAY) stops it.
+- That a saved, latched arpeggio recalls exactly, and that changing preset (not PLAY) stops it, while recorded sequencer lanes keep playing until PLAY stops them.
 - Recording levels when sampling the FM-1 into an MPC Sample.
 
 The lessons are written so that none of these can stop you finishing. The full list, with how each item was checked, is in [`source/book/docs/RESEARCH-AND-VERIFICATION.md`](source/book/docs/RESEARCH-AND-VERIFICATION.md).

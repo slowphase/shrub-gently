@@ -2,6 +2,20 @@
 
 All notable changes to *Shrub, Gently*. Each entry names the SHRUB firmware version it was written against.
 
+## v0.9.2-preview (15 November 2026), SHRUB V1.04
+
+Focused correction pass after an independent second review. Still 68 pages; still not tested on a physical FM-1. All v0.9.1 corrections are preserved.
+
+| # | Issue in v0.9.1 | Where | Change | Verified by | Hardware test? |
+|---|---|---|---|---|---|
+| 1 | **Source not reproducible.** Built with WeasyPrint 68, the v0.9.1 source produced 68 pages but silently lost the ten small screen illustrations (and their captions' layout) on pp. 13, 15, 20, 21, 22, 26, 27, 33, 37 and 47. | `figures.py`, `build.py`, new `requirements.txt` | Cause: the screen illustrations were wrapped in an SVG `clipPath` (for rounded corners), which WeasyPrint 68 drops. The clip is removed and the corners are drawn into the shapes. `requirements.txt` pins WeasyPrint 70.0 (the version recorded in the delivered PDF's metadata) and every dependency. `build.py` now refuses to run on any WeasyPrint other than 70.x with a clear message. | Reproduced the failure under WeasyPrint 68.0; clean rebuild from the archive in a fresh virtual environment; text, page geometry and rendered pages compared (see QA report) | No |
+| 2 | Changing preset described as stopping any pattern | p. 14 note; p. 49 step 17; p. 50 Have a Play; p. 61 troubleshooting | Arp and motion-sequencer lanes now distinguished. A latched arp stops when switched off or (with ARP+SCALE on PRESET) when another preset loads. Recorded lanes keep playing after loading a preset without lanes; PLAY stops the transport, and SEQ with CLEAR LANE or CLEAR ALL removes them. Lesson 7's ECHO STEPS procedure unchanged. | Guide p. 25 (lanes, loading presets with and without lanes); guide p. 10 (PLAY starts and stops the transport); arp behaviour from v0.9.1 emulator tests | Yes: confirm on hardware |
+| 3 | "Twelve buttons" | p. 7 | "Twelve main buttons, plus the two octave buttons (2): fourteen in total." Diagram unchanged: it already shows all fourteen. | Guide p. 10 ("fourteen buttons") | No |
+| 4 | FAVORITES implied to hold only the ten course patches, though Lesson 1 starred 042 PAD CHILL HAWK | p. 55, Tidy the bank | New optional step: unstar earlier factory favourites by loading them and holding HOME; removing a star doesn't change the sound. Favourites stated as optional. | Guide p. 12 (hold HOME to add or remove a favourite) | No |
+| 5 | MPC cable partly called an "insert" cable | p. 4; p. 56 step 1 and figure | Consistently "3.5 mm TRS stereo to dual 6.35 mm TS mono breakout cable": stereo plug to FM-1 AUDIO OUT, left mono plug to AUDIO IN 1/L, right to 2/R. Procedure and diagram layout unchanged. | Akai MPC Sample User Guide (AUDIO IN 1/L and 2/R; Source Rear) | Cable fit only |
+
+---
+
 ## v0.9.1-preview (15 November 2026), SHRUB V1.04
 
 Technical correction and refinement pass, checked against the official **SHRUB Operation Guide** (PDF, 46 pages, firmware V1.04, guide v1.0) and the FM-1 emulator running the official `SHRUB.fwsc`. Still not tested on a physical FM-1. 68 pages (v0.9: 64).

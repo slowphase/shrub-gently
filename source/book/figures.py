@@ -190,7 +190,8 @@ SECTION_COL = {"HOME": "#E2913A", "OSC": "#B6D63E", "SUB": "#B6D63E", "FILTER": 
 def screen(title, col="OSC", pills=None, active=0, dots=None, big=None, sub=None, knobs=None,
            display=None, right=None, chips=None, num=None):
     c = SECTION_COL.get(col, col)
-    o = [f'<rect width="240" height="240" fill="{SCREEN}"/>']
+    # rounded corners are drawn into the shapes themselves (no clipPath: see build notes)
+    o = [f'<rect width="240" height="240" rx="6" fill="{SCREEN}"/>']
     o.append(t(10, 21, title, 15, c, 800, "start", ls=.2))
     if dots:
         n, i = dots
@@ -228,7 +229,7 @@ def screen(title, col="OSC", pills=None, active=0, dots=None, big=None, sub=None
     if display:
         o.append(display)
     if knobs:
-        o.append(f'<rect x="0" y="160" width="240" height="80" fill="#161817"/>')
+        o.append('<path d="M0,160 H240 V234 A6,6 0 0 1 234,240 H6 A6,6 0 0 1 0,234 Z" fill="#161817"/>')
         for k, kn in enumerate(knobs):
             if kn is None:
                 continue
@@ -254,7 +255,7 @@ def _arc(cx, cy, r, a0, a1):
 
 
 def screen_svg(scr, width="46mm"):
-    return f'<svg class="scr-mock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" font-family="{SANS}" style="width:{width}"><clipPath id="sc"><rect width="240" height="240" rx="6"/></clipPath><g clip-path="url(#sc)">{scr}</g></svg>'
+    return f'<svg class="scr-mock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" font-family="{SANS}" style="width:{width}">{scr}</svg>'
 
 
 def _saw_display(x0=14, y0=60, w=212, h=90, col="#B6D63E"):
@@ -736,7 +737,7 @@ def mpc_hookup_fig():
     o.append(f'<path d="M330,60 C360,60 380,78 418,78" stroke="{INK}" stroke-width="2.4" fill="none"/>')
     o.append(f'<path d="M330,60 C360,60 380,106 418,106" stroke="{INK}" stroke-width="2.4" fill="none"/>')
     o.append(f'<circle cx="330" cy="60" r="5" fill="{LIME}" stroke="{INK}"/>')
-    o.append(t(300, 22, "Cable: 3.5 mm TRS stereo plug to two 6.35 mm (1/4 in) TS mono plugs", 8.6, INK, 600))
+    o.append(t(300, 22, "3.5 mm TRS stereo to dual 6.35 mm TS mono breakout cable", 8.6, INK, 600))
     o.append(t(380, 72, "L", 9, FOREST, 800) + t(380, 121, "R", 9, FOREST, 800))
     # MPC mini
     o.append(f'<rect x="420" y="30" width="170" height="140" rx="10" fill="#E8EBE0" stroke="{INK}" stroke-width="2"/>')

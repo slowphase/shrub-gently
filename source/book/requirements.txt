@@ -1,0 +1,15 @@
+# Exact versions used to build Shrub, Gently v0.9.2 (Python 3.13).
+# WeasyPrint must stay on 70.x: other versions can silently drop drawings.
+weasyprint==70.0
+pydyf==0.13.0
+tinycss2==1.5.1
+tinyhtml5==2.1.0
+cssselect2==0.10.1
+fonttools==4.67.0
+pillow==12.3.0
+pyphen==0.18.1
+cffi==2.1.1
+pycparser==3.0
+brotli==1.2.1
+zopfli==0.4.3
+webencodings==0.6.1

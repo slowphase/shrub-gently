@@ -1,7 +1,7 @@
 """Build Shrub, Gently.
 
-    pip install weasyprint
-    python3 build.py              # writes Shrub-Gently.pdf
+    pip install -r requirements.txt   # WeasyPrint 70 and its pinned dependencies
+    python3 build.py                  # writes Shrub-Gently.pdf
     python3 build.py out.pdf
 
 Text lives in content/*.html (read in name order). Markup helpers:
@@ -23,9 +23,29 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, ROOT)
 os.chdir(ROOT)
 import figures as F  # noqa: E402
-import weasyprint  # noqa: E402
 
-VERSION = "v0.9.1 Preview"
+# --- renderer check ---------------------------------------------------------
+# The book is laid out for WeasyPrint 70. Other versions can produce a PDF with
+# the same page count but missing drawings or text (v0.9.1 rebuilt under
+# WeasyPrint 68 silently lost its screen illustrations), so refuse to build
+# with anything else. Install the pinned versions with:
+#     pip install -r requirements.txt
+# To experiment with another version anyway, set SHRUB_ALLOW_ANY_WEASYPRINT=1
+# and check every page of the result.
+REQUIRED_WEASYPRINT = "70."
+try:
+    import weasyprint  # noqa: E402
+except ImportError:
+    sys.exit("WeasyPrint is not installed. Run: pip install -r requirements.txt")
+if not weasyprint.__version__.startswith(REQUIRED_WEASYPRINT):
+    msg = (f"This book needs WeasyPrint {REQUIRED_WEASYPRINT}x, but WeasyPrint {weasyprint.__version__} is installed.\n"
+           "Other versions can silently drop drawings or text. Run: pip install -r requirements.txt")
+    if os.environ.get("SHRUB_ALLOW_ANY_WEASYPRINT") == "1":
+        print("WARNING: " + msg.splitlines()[0] + " Building anyway because SHRUB_ALLOW_ANY_WEASYPRINT=1.", file=sys.stderr)
+    else:
+        sys.exit("ERROR: " + msg)
+
+VERSION = "v0.9.2 Preview"
 FIRMWARE = "V1.04"
 
 
@@ -111,7 +131,7 @@ def build(out):
 </body></html>"""
     open("book.html", "w", encoding="utf-8").write(html)
     doc = weasyprint.HTML("book.html", base_url=ROOT).render()
-    print("pages:", len(doc.pages))
+    print("pages:", len(doc.pages), "| WeasyPrint", weasyprint.__version__)
     doc.write_pdf(out)
     print("wrote", out, os.path.getsize(out) // 1024, "KB")
 
