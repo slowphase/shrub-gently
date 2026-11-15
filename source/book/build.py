@@ -45,7 +45,7 @@ if not weasyprint.__version__.startswith(REQUIRED_WEASYPRINT):
     else:
         sys.exit("ERROR: " + msg)
 
-VERSION = "v0.9.2 Preview"
+VERSION = "v1.0"
 FIRMWARE = "V1.04"
 
 

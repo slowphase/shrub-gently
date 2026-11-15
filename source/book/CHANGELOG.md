@@ -2,6 +2,16 @@
 
 All notable changes to *Shrub, Gently*. Each entry names the SHRUB firmware version it was written against.
 
+## v1.0.0 (15 November 2026), SHRUB V1.04
+
+Released as version 1.0 by the author's decision; physical FM-1 testing continues and will feed later versions.
+
+- `VERSION` set to v1.0 (cover-to-end-page version strings on pp. 67 and 68).
+- About This Edition (p. 67): "This preview has not yet been tested on a physical FM-1; a hands-on pass is the next step before version 1.0" became "This edition has not yet been tested on a physical FM-1; a hands-on pass is under way, and any corrections will appear in later versions."
+- No other content changes from v0.9.2. Verified by text and pixel comparison: only pp. 67 and 68 differ.
+
+---
+
 ## v0.9.2-preview (15 November 2026), SHRUB V1.04
 
 Focused correction pass after an independent second review. Still 68 pages; still not tested on a physical FM-1. All v0.9.1 corrections are preserved.
@@ -81,6 +91,6 @@ First complete edition. Not yet tested on a physical FM-1.
 - PDF bookmarks and linked contents.
 - Research and verification notes.
 
-## Planned for v1.0.0
+## Planned for the next version
 - Full hands-on pass of every lesson on a physical FM-1 at V1.04 or later (checklist in docs/RESEARCH-AND-VERIFICATION.md).
 - Resolve remaining hardware questions; update screens and values where hardware differs.

@@ -65,3 +65,9 @@ Text wrapping, callouts, step numbering, tables, the MPC figure, headers, footer
 - Physical FM-1 testing is still outstanding (see RESEARCH-AND-VERIFICATION.md, section 6). The new checklist item covers lanes continuing after a preset change.
 - Have a Play boxes that continue across a page repeat their dark background on the new page, by design.
 - Build tested on Linux only. macOS and Windows need WeasyPrint's system libraries (Pango); the pinned Python packages are the same.
+
+## Addendum: v1.0 (15 November 2026)
+v1.0 is the v0.9.2 content with its version label changed and one sentence on page 67 updated (no longer called a preview; hardware testing described as under way). Checks repeated on the v1.0 build:
+- 68 pages; text and rendered pages identical to v0.9.2 on every page except 67 and 68 (both read at 95 dpi).
+- Clean rebuild from `shrub-gently-source-v1.0.zip` in a fresh environment from `requirements.txt` (WeasyPrint 70.0): text, word positions and rendered pages at 100 dpi identical to the delivered `Shrub-Gently-v1.0.pdf` on all 68 pages.
+- Bookmarks, links and fonts unchanged from v0.9.2.

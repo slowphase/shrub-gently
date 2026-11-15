@@ -13,7 +13,7 @@ One manuscript, one edition (160 × 244 mm, sized for the iPad mini).
 | `book/figures.py` | Draws the FM-1 panel, the screen illustrations, the teaching diagrams and the cover shrub (Python that writes SVG). `PANELS` sets which controls light up in each lesson. |
 | `book/style.css` | The design system: palette, typography, page size, callouts and layout. |
 | `book/fonts/` | Archivo, Source Serif 4, IBM Plex Mono, Michroma, Jost (latin subsets) and a fixed Fraunces instance (SIL OFL 1.1). |
-| `book/docs/RESEARCH-AND-VERIFICATION.md` | Sources, every check against the Operation Guide and emulator, discrepancies, and the hardware checklist for v1.0. |
+| `book/docs/RESEARCH-AND-VERIFICATION.md` | Sources, every check against the Operation Guide and emulator, discrepancies, and the hardware checklist. |
 | `book/CHANGELOG.md` | Detailed manuscript history, with guide page references for each correction. |
 
 ## Writing conventions

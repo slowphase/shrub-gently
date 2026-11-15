@@ -1,8 +1,14 @@
 # Changelog
 
-## v0.9.2-preview, November 2026
+## v1.0.0, November 2026
 
 First public release.
+
+- The v0.9.2 content, released as version 1.0. 68 pages, written for SHRUB firmware V1.04.
+- "About This Edition" (page 67) now says a hands-on FM-1 pass is under way and corrections will appear in later versions, instead of calling the book a preview.
+- Checked against the official *SHRUB Operation Guide* and the FM-1 emulator; still pending physical-hardware validation (checklist in [source/book/docs/RESEARCH-AND-VERIFICATION.md](source/book/docs/RESEARCH-AND-VERIFICATION.md)).
+
+## v0.9.2-preview, November 2026 (unreleased)
 
 - **Reproducible build.** The source now pins WeasyPrint 70.0 and its dependencies in `source/book/requirements.txt`, and `build.py` stops with a clear message on any other WeasyPrint version. The screen illustrations no longer use an SVG clip path, which WeasyPrint 68 silently dropped. A clean rebuild from the source archive matches the PDF in text, page geometry and rendered pages.
 - **Arpeggiator vs motion sequencer.** The book now distinguishes a latched arp (stops when switched off or when another preset loads) from recorded sequencer lanes (keep playing after loading a preset without lanes; stop with PLAY, remove with SEQ and CLEAR LANE or CLEAR ALL). Pages 14, 49, 50 and 61.

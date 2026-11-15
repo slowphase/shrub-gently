@@ -1,6 +1,6 @@
 # Shrub, Gently: research and technical verification
 
-Edition: **v0.9.2 Preview**, 15 November 2026
+Edition: **v1.0**, 15 November 2026 (content identical to v0.9.2 Preview)
 Written against: **SHRUB firmware V1.04** for the M-VAVE FM-1
 Primary authority: **SHRUB Operation Guide**, PDF export of shrub.audio/guide, 46 pages, "Firmware V1.04 · Guide version 1.0 · November 2026". Page numbers below refer to that PDF.
 
@@ -125,7 +125,7 @@ HOME CUTOFF 2.06 kHz, RES 10%; OSC A DEFAULT, WT POS 1, LEVEL 75%, VOICES 1, DET
 - **Test:** fresh extraction of the v0.9.2 source ZIP into an empty directory, fresh Python 3.13 virtual environment, `pip install -r requirements.txt`, `python3 build.py`. The result was compared with the delivered PDF by extracted text per page, page size, every word's position, and rendered page images at 100 dpi. Results are in QA-REPORT-v0.9.2.md.
 - Byte-for-byte identity is not expected: WeasyPrint writes a creation timestamp and randomly named font subsets into each PDF.
 
-## 6. Hardware checklist for v1.0
+## 6. Hardware checklist (for the first post-1.0 revision)
 - [ ] Run every lesson end to end on a physical FM-1 at V1.04.
 - [ ] VOICING note counts: INIT (expect 8 or 4?), WIDE SKY (expect 4), 5+3 (expect 2). Does a four-note chord on WIDE SKY sound complete?
 - [ ] EDIT from another section: OSC A or last part?

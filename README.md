@@ -35,7 +35,7 @@ python3 build.py
 
 Full instructions are in [`source/README.md`](source/README.md#building).
 
-**Handbook:** v0.9.2 Preview · **Firmware documented:** SHRUB V1.04 · **Status:** checked against the official Operation Guide and emulator; hardware testing pending
+**Handbook:** v1.0 · **Firmware documented:** SHRUB V1.04 · **Status:** checked against the official Operation Guide and emulator; hardware testing pending
 
 Future versions will appear on the [Releases page](https://github.com/slowphase/shrub-gently/releases).
 
@@ -102,11 +102,11 @@ Please install and update SHRUB using the official instructions on shrub.audio, 
 
 ## Version compatibility
 
-The handbook has its own version number, separate from the firmware it describes. "v0.9.2" is the version of this book; "V1.04" is the SHRUB firmware it was written for.
+The handbook has its own version number, separate from the firmware it describes. "v1.0" is the version of this book; "V1.04" is the SHRUB firmware it was written for.
 
 | | Status |
 | --- | --- |
-| Handbook | v0.9.2 Preview |
+| Handbook | v1.0 |
 | Documented firmware | SHRUB V1.04 |
 | Reference documentation | *SHRUB Operation Guide* v1.0 (November 2026) |
 | Hardware testing | Pending |
