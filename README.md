@@ -4,7 +4,6 @@
 
 <p align="center">
   <a href="LICENSE.md"><img src="https://img.shields.io/badge/licence-CC%20BY--SA%204.0-b3d234?style=flat-square&labelColor=1f3a2b" alt="Licence: CC BY-SA 4.0"></a>
-  <a href="https://github.com/slowphase/shrub-gently/releases"><img src="https://img.shields.io/github/downloads/slowphase/shrub-gently/total?style=flat-square&label=downloads&color=b3d234&labelColor=1f3a2b" alt="Total downloads"></a>
 </p>
 
 *A free, illustrated beginner's handbook to wavetable synthesis on the M-VAVE FM-1 running [SHRUB](https://shrub.audio/), Steve Duda's free firmware.*
